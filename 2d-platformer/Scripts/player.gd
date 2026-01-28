@@ -76,7 +76,7 @@ func increase_score (amount : int):
 
 func _damage_flash ():
 	sprite.modulate = Color.RED
-	await get_tree().create_timer(0.05).timeout
+	await get_tree().create_timer(0.1).timeout
 	sprite.modulate = Color.WHITE
 
 func play_sound (sound : AudioStream):
