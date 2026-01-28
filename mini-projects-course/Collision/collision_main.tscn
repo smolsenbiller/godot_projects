@@ -1,0 +1,132 @@
+[gd_scene load_steps=7 format=3 uid="uid://7iwi7ovpg2g"]
+
+[ext_resource type="PackedScene" uid="uid://tiqytbos00cr" path="res://Collision/tree.tscn" id="1_csmm8"]
+[ext_resource type="Script" uid="uid://2s3s7g1m5dw5" path="res://Collision/collision_main.gd" id="1_l54g2"]
+[ext_resource type="PackedScene" uid="uid://bn5vjnbuey2vx" path="res://Collision/player_collision_game.tscn" id="2_csmm8"]
+
+[sub_resource type="Environment" id="Environment_eqao6"]
+background_mode = 1
+background_color = Color(0.5594777, 0.69902116, 0.9002963, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iq23f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y6hr7"]
+size = Vector3(12, 0.3, 30)
+
+[node name="Collision_main" type="Node3D"]
+script = ExtResource("1_l54g2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_eqao6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.34202015, 0.9396926, 0, -0.9396926, 0.34202015, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="groundmodel" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(12, 0, 0, 0, 0.2819078, 10.260604, 0, -0.10260604, 28.190779, 0, 0, 0)
+mesh = SubResource("BoxMesh_iq23f")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 0, 0)
+shape = SubResource("BoxShape3D_y6hr7")
+
+[node name="player_collision_game" parent="." instance=ExtResource("2_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 0.93969256, 0.3420201, 0, -0.3420201, 0.93969256, 1.1920929e-07, 7.8988843, 12.805863)
+
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="Tree" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.234002, 1.2811046, 0.68291056)
+
+[node name="Tree2" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4222765, 1.2811046, 0.68291056)
+
+[node name="Tree3" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0599203, 1.2811046, 0.68291056)
+
+[node name="Tree20" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.234002, -2.2192516, -8.908255)
+
+[node name="Tree21" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4222765, -2.2192516, -8.908255)
+
+[node name="Tree22" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0599203, -2.2192516, -8.908255)
+
+[node name="Tree4" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2177122, 2.3702064, 3.709694)
+
+[node name="Tree5" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4431553, 2.3702064, 3.709694)
+
+[node name="Tree6" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.563147, 2.3702064, 3.709694)
+
+[node name="Tree7" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24828, 2.3702064, 3.709694)
+
+[node name="Tree27" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2177122, 4.5594616, 9.797791)
+
+[node name="Tree28" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4431553, 4.5594616, 9.797791)
+
+[node name="Tree29" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.563147, 4.5594616, 9.797791)
+
+[node name="Tree30" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24828, 4.5594616, 9.797791)
+
+[node name="Tree23" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2177122, -3.1723075, -11.468364)
+
+[node name="Tree24" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4431553, -3.1723075, -11.468364)
+
+[node name="Tree25" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.563147, -3.1723075, -11.468364)
+
+[node name="Tree26" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24828, -3.1723075, -11.468364)
+
+[node name="Tree8" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24828, 3.5168777, 6.743407)
+
+[node name="Tree9" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.020268, 3.5168777, 6.743407)
+
+[node name="Tree10" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3001637, 3.5168777, 6.743407)
+
+[node name="Tree11" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3001637, -0.07296848, -2.6260772)
+
+[node name="Tree12" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0110326, -0.07296848, -2.6260772)
+
+[node name="Tree13" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43499315, -0.07296848, -2.6260772)
+
+[node name="Tree14" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2451196, -0.07296848, -2.6260772)
+
+[node name="Tree15" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2451196, -0.07296848, -2.6260772)
+
+[node name="Tree16" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3001637, -1.1626272, -5.5981774)
+
+[node name="Tree17" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0110326, -1.1626272, -5.5981774)
+
+[node name="Tree18" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43499315, -1.1626272, -5.5981774)
+
+[node name="Tree19" parent="Trees" instance=ExtResource("1_csmm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2451196, -1.1626272, -5.5981774)
+
+[connection signal="body_entered" from="player_collision_game" to="player_collision_game" method="_on_body_entered"]

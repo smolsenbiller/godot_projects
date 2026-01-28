@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs5cobnrorheu"]
+
+[ext_resource type="Script" uid="uid://dxf7v2tmw403h" path="res://Loops/loop_main.gd" id="1_03qc6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_na47j"]
+
+[node name="loop_main" type="Node2D"]
+script = ExtResource("1_03qc6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("CanvasTexture_na47j")

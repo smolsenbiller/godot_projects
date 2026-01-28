@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://bn5vjnbuey2vx"]
+
+[ext_resource type="Script" uid="uid://qas0sc62pq2" path="res://Collision/player_collision_game.gd" id="1_88co7"]
+[ext_resource type="ArrayMesh" uid="uid://7sf0uh37cgo6" path="res://Collision/character-female-b.obj" id="2_iaw1x"]
+[ext_resource type="Material" uid="uid://cmbik3yarqems" path="res://Collision/Textures/ski_color.tres" id="3_r6vwg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_csmm8"]
+friction = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eqao6"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iq23f"]
+albedo_color = Color(0.67, 0.648225, 0.23450002, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_csmm8"]
+size = Vector3(0.32614136, 0.6792793, 0.5803528)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y6hr7"]
+
+[node name="player_collision_game" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_csmm8")
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_88co7")
+move_speed = 5.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.328, 0)
+mesh = ExtResource("2_iaw1x")
+surface_material_override/0 = SubResource("StandardMaterial3D_eqao6")
+surface_material_override/1 = SubResource("StandardMaterial3D_iq23f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0006122589, 0)
+shape = SubResource("BoxShape3D_csmm8")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, 1.593216, 2.4038048)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.11882501, 0, 0, 0, 0.023979962, 0, 0, 0, 1, -0.0799126, -0.328, 0)
+mesh = SubResource("BoxMesh_y6hr7")
+surface_material_override/0 = ExtResource("3_r6vwg")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.11882501, 0, 0, 0, 0.023979962, 0, 0, 0, 1, 0.07754515, -0.328, 0)
+mesh = SubResource("BoxMesh_y6hr7")
+surface_material_override/0 = ExtResource("3_r6vwg")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,567 @@
+[gd_scene load_steps=3 format=3 uid="uid://6ojhobmofue4"]
+
+[ext_resource type="PackedScene" uid="uid://cnuykhf7griv1" path="res://Physics/player.tscn" id="1_4qraf"]
+[ext_resource type="PackedScene" uid="uid://ctbnb008jluba" path="res://Physics/crate.tscn" id="2_sotcl"]
+
+[node name="Physics_Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="player" parent="." instance=ExtResource("1_4qraf")]
+mass = 5.0
+linear_damp = 1.0
+
+[node name="crate" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-49, -1)
+gravity_scale = 0.0
+linear_damp = 1.3
+
+[node name="crate2" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-91, -2)
+linear_damp = 1.3
+
+[node name="crate3" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-133, -2)
+linear_damp = 1.3
+
+[node name="crate4" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-171, -2)
+linear_damp = 1.3
+
+[node name="crate5" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-203, -1)
+linear_damp = 1.3
+
+[node name="crate6" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-241, -2)
+linear_damp = 1.3
+
+[node name="crate7" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-272, -3)
+linear_damp = 1.3
+
+[node name="crate8" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-49, -40)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate9" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-91, -41)
+linear_damp = 1.3
+
+[node name="crate10" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-133, -41)
+linear_damp = 1.3
+
+[node name="crate11" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-171, -41)
+linear_damp = 1.3
+
+[node name="crate12" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-203, -40)
+linear_damp = 1.3
+
+[node name="crate13" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-241, -41)
+linear_damp = 1.3
+
+[node name="crate14" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-272, -42)
+linear_damp = 1.3
+
+[node name="crate15" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-51, -80)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate16" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-93, -81)
+linear_damp = 1.3
+
+[node name="crate17" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-135, -81)
+linear_damp = 1.3
+
+[node name="crate18" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-173, -81)
+linear_damp = 1.3
+
+[node name="crate19" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-205, -80)
+linear_damp = 1.3
+
+[node name="crate20" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-243, -81)
+linear_damp = 1.3
+
+[node name="crate21" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-274, -82)
+linear_damp = 1.3
+
+[node name="crate22" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-52, -115)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate23" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-94, -116)
+linear_damp = 1.3
+
+[node name="crate24" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-136, -116)
+linear_damp = 1.3
+
+[node name="crate25" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-174, -116)
+linear_damp = 1.3
+
+[node name="crate26" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-206, -115)
+linear_damp = 1.3
+
+[node name="crate27" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-244, -116)
+linear_damp = 1.3
+
+[node name="crate28" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-275, -117)
+linear_damp = 1.3
+
+[node name="crate29" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-50, -144)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate30" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-92, -145)
+linear_damp = 1.3
+
+[node name="crate31" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-134, -145)
+linear_damp = 1.3
+
+[node name="crate32" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-172, -145)
+linear_damp = 1.3
+
+[node name="crate33" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-204, -144)
+linear_damp = 1.3
+
+[node name="crate34" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-242, -145)
+linear_damp = 1.3
+
+[node name="crate35" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-273, -146)
+linear_damp = 1.3
+
+[node name="crate36" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-49, 33)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate37" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-91, 32)
+linear_damp = 1.3
+
+[node name="crate38" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-133, 32)
+linear_damp = 1.3
+
+[node name="crate39" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-171, 32)
+linear_damp = 1.3
+
+[node name="crate40" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-203, 33)
+linear_damp = 1.3
+
+[node name="crate41" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-241, 32)
+linear_damp = 1.3
+
+[node name="crate42" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-272, 31)
+linear_damp = 1.3
+
+[node name="crate43" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-48, 71)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate44" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-90, 70)
+linear_damp = 1.3
+
+[node name="crate45" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-132, 70)
+linear_damp = 1.3
+
+[node name="crate46" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-170, 70)
+linear_damp = 1.3
+
+[node name="crate47" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-202, 71)
+linear_damp = 1.3
+
+[node name="crate48" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-240, 70)
+linear_damp = 1.3
+
+[node name="crate49" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-271, 69)
+linear_damp = 1.3
+
+[node name="crate50" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-49, 103)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate51" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-91, 102)
+linear_damp = 1.3
+
+[node name="crate52" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-133, 102)
+linear_damp = 1.3
+
+[node name="crate53" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-171, 102)
+linear_damp = 1.3
+
+[node name="crate54" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-203, 103)
+linear_damp = 1.3
+
+[node name="crate55" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-241, 102)
+linear_damp = 1.3
+
+[node name="crate56" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-272, 101)
+linear_damp = 1.3
+
+[node name="crate57" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-48, 141)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate58" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-90, 140)
+linear_damp = 1.3
+
+[node name="crate59" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-132, 140)
+linear_damp = 1.3
+
+[node name="crate60" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-170, 140)
+linear_damp = 1.3
+
+[node name="crate61" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-202, 141)
+linear_damp = 1.3
+
+[node name="crate62" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-240, 140)
+linear_damp = 1.3
+
+[node name="crate63" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-271, 139)
+linear_damp = 1.3
+
+[node name="crate64" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(268, 3)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate65" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(226, 2)
+linear_damp = 1.3
+
+[node name="crate66" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(184, 2)
+linear_damp = 1.3
+
+[node name="crate67" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(146, 2)
+linear_damp = 1.3
+
+[node name="crate68" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(114, 3)
+linear_damp = 1.3
+
+[node name="crate69" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(76, 2)
+linear_damp = 1.3
+
+[node name="crate70" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(45, 1)
+linear_damp = 1.3
+
+[node name="crate71" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(268, -36)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate72" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(226, -37)
+linear_damp = 1.3
+
+[node name="crate73" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(184, -37)
+linear_damp = 1.3
+
+[node name="crate74" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(146, -37)
+linear_damp = 1.3
+
+[node name="crate75" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(114, -36)
+linear_damp = 1.3
+
+[node name="crate76" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(76, -37)
+linear_damp = 1.3
+
+[node name="crate77" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(45, -38)
+linear_damp = 1.3
+
+[node name="crate78" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(266, -76)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate79" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(224, -77)
+linear_damp = 1.3
+
+[node name="crate80" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(182, -77)
+linear_damp = 1.3
+
+[node name="crate81" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(144, -77)
+linear_damp = 1.3
+
+[node name="crate82" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(112, -76)
+linear_damp = 1.3
+
+[node name="crate83" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(74, -77)
+linear_damp = 1.3
+
+[node name="crate84" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(43, -78)
+linear_damp = 1.3
+
+[node name="crate85" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(265, -111)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate86" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(223, -112)
+linear_damp = 1.3
+
+[node name="crate87" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(181, -112)
+linear_damp = 1.3
+
+[node name="crate88" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(143, -112)
+linear_damp = 1.3
+
+[node name="crate89" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(111, -111)
+linear_damp = 1.3
+
+[node name="crate90" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(73, -112)
+linear_damp = 1.3
+
+[node name="crate91" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(42, -113)
+linear_damp = 1.3
+
+[node name="crate92" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(267, -140)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate93" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(225, -141)
+linear_damp = 1.3
+
+[node name="crate94" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(183, -141)
+linear_damp = 1.3
+
+[node name="crate95" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(145, -141)
+linear_damp = 1.3
+
+[node name="crate96" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(113, -140)
+linear_damp = 1.3
+
+[node name="crate97" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(75, -141)
+linear_damp = 1.3
+
+[node name="crate98" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(44, -142)
+linear_damp = 1.3
+
+[node name="crate99" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(268, 37)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate100" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(226, 36)
+linear_damp = 1.3
+
+[node name="crate101" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(184, 36)
+linear_damp = 1.3
+
+[node name="crate102" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(146, 36)
+linear_damp = 1.3
+
+[node name="crate103" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(114, 37)
+linear_damp = 1.3
+
+[node name="crate104" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(76, 36)
+linear_damp = 1.3
+
+[node name="crate105" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(45, 35)
+linear_damp = 1.3
+
+[node name="crate106" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(269, 75)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate107" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(227, 74)
+linear_damp = 1.3
+
+[node name="crate108" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(185, 74)
+linear_damp = 1.3
+
+[node name="crate109" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(147, 74)
+linear_damp = 1.3
+
+[node name="crate110" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(115, 75)
+linear_damp = 1.3
+
+[node name="crate111" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(77, 74)
+linear_damp = 1.3
+
+[node name="crate112" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(46, 73)
+linear_damp = 1.3
+
+[node name="crate113" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(268, 107)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate114" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(226, 106)
+linear_damp = 1.3
+
+[node name="crate115" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(184, 106)
+linear_damp = 1.3
+
+[node name="crate116" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(146, 106)
+linear_damp = 1.3
+
+[node name="crate117" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(114, 107)
+linear_damp = 1.3
+
+[node name="crate118" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(76, 106)
+linear_damp = 1.3
+
+[node name="crate119" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(45, 105)
+linear_damp = 1.3
+
+[node name="crate120" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(269, 145)
+mass = 1.0
+linear_damp = 1.3
+
+[node name="crate121" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(227, 144)
+linear_damp = 1.3
+
+[node name="crate122" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(185, 144)
+linear_damp = 1.3
+
+[node name="crate123" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(147, 144)
+linear_damp = 1.3
+
+[node name="crate124" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(115, 145)
+linear_damp = 1.3
+
+[node name="crate125" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(77, 144)
+linear_damp = 1.3
+
+[node name="crate126" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(46, 143)
+linear_damp = 1.3
+
+[node name="crate128" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(2, -38)
+linear_damp = 1.3
+
+[node name="crate129" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(0, -78)
+linear_damp = 1.3
+
+[node name="crate130" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(-1, -113)
+linear_damp = 1.3
+
+[node name="crate131" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(1, -142)
+linear_damp = 1.3
+
+[node name="crate132" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(2, 35)
+linear_damp = 1.3
+
+[node name="crate133" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(3, 73)
+linear_damp = 1.3
+
+[node name="crate134" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(2, 105)
+linear_damp = 1.3
+
+[node name="crate135" parent="." instance=ExtResource("2_sotcl")]
+position = Vector2(3, 143)
+linear_damp = 1.3

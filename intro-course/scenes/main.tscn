@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0c6osclh3syu"]
+
+[ext_resource type="PackedScene" uid="uid://ck4xrly2gpk2w" path="res://scenes/player.tscn" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://lfw5png6w8v0" path="res://scenes/coin.tscn" id="2_sugp2"]
+[ext_resource type="Script" uid="uid://0pr2f47xlxah" path="res://scenes/label.gd" id="3_sugp2"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_sugp2"]
+
+[node name="Main" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0.5176471, 1, 1)
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.817478, 16.16)
+texture = SubResource("CanvasTexture_sugp2")
+
+[node name="Player" parent="." instance=ExtResource("1_0wfyh")]
+unique_name_in_owner = true
+position = Vector2(552, 325)
+
+[node name="Coin" parent="." instance=ExtResource("2_sugp2")]
+position = Vector2(371, 336)
+
+[node name="Coin2" parent="." instance=ExtResource("2_sugp2")]
+position = Vector2(718, 336)
+
+[node name="Coin3" parent="." instance=ExtResource("2_sugp2")]
+position = Vector2(626, 470)
+
+[node name="Coin6" parent="." instance=ExtResource("2_sugp2")]
+position = Vector2(626, 192)
+
+[node name="Coin4" parent="." instance=ExtResource("2_sugp2")]
+position = Vector2(453, 470)
+
+[node name="Coin5" parent="." instance=ExtResource("2_sugp2")]
+position = Vector2(453, 195)
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 464.0
+offset_top = 4.0
+offset_right = 525.0
+offset_bottom = 27.0
+scale = Vector2(2.6745355, 2.6745355)
+text = "Score: 0"
+script = ExtResource("3_sugp2")
