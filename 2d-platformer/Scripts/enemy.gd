@@ -1,15 +1,15 @@
 extends Area2D
 
-
 @export var move_direction : Vector2
-@export var move_speed : float = 50.0
-@export var damage : int = 1
+@export var move_speed : float = 20
 
 @onready var start_pos : Vector2 = global_position
 @onready var target_pos : Vector2 = global_position + move_direction
-@onready var anim : AnimationPlayer = $AnimationPlayer
 
-func _physics_process(delta: float) -> void:
+func _ready ():
+	$AnimationPlayer.play("fly")
+
+func _physics_process(delta):
 	global_position = global_position.move_toward(target_pos, move_speed * delta)
 	
 	if global_position == target_pos:
@@ -18,13 +18,8 @@ func _physics_process(delta: float) -> void:
 		else:
 			target_pos = start_pos
 
-
-func _on_body_entered(body: Node2D) -> void:
-	if not body.is_in_group("player"):
+func _on_body_entered(body):
+	if not body.is_in_group("Player"):
 		return
 	
-	body.take_damage(damage)
-	print(body.health)
-
-func _process(delta: float) -> void:
-	anim.play("fly")
+	body.take_damage(1)
