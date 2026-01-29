@@ -30,6 +30,4 @@ texture = SubResource("CanvasTexture_o5qli")
 position = Vector2(250, 248)
 
 [node name="pipes" parent="." unique_id=1483097776 instance=ExtResource("2_sugp2")]
-position = Vector2(1113, -51)
-
-[connection signal="add_pipes" from="pipes" to="." method="_on_pipes_add_pipes"]
+position = Vector2(1063, -35)
