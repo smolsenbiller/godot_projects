@@ -21,7 +21,10 @@ func _process(delta: float) -> void:
 	score_label.text = "Score: " + str(score)
 	
 	if game_start == true and game_over == true:
-		start_info.text = "Press space to restart"
+		if score >= HighScore.high_score:
+			HighScore.high_score = score
+		
+		start_info.text = "High Score: " + str(HighScore.high_score) + "\nYour Score: " + str(score) + "\nPress space to restart"
 		start_info.show()
 		if Input.is_action_just_pressed("ui_accept"):
 			get_tree().reload_current_scene()
