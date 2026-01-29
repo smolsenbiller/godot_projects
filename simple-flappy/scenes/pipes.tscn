@@ -7,6 +7,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(50, 500)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f17p0"]
+size = Vector2(50, 148)
+
 [node name="pipes" type="Node2D" unique_id=1483097776]
 script = ExtResource("1_f17p0")
 
@@ -31,5 +34,12 @@ texture = SubResource("CanvasTexture_sugp2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottom_pipe" unique_id=1902058555]
 shape = SubResource("RectangleShape2D_jyhfs")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1562347195]
+position = Vector2(0, 324)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1597680144]
+shape = SubResource("RectangleShape2D_f17p0")
+
 [connection signal="body_entered" from="top_pipe" to="." method="_on_top_pipe_body_entered"]
 [connection signal="body_entered" from="bottom_pipe" to="." method="_on_bottom_pipe_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
