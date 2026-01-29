@@ -1,3 +1,35 @@
 [gd_scene format=3 uid="uid://cjwkylkn271vq"]
 
+[ext_resource type="PackedScene" uid="uid://bl1uy5rjiuk8i" path="res://scenes/bird.tscn" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://c14ltgtmbw5c0" path="res://scenes/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://cl5i111tsbw42" path="res://scenes/pipes.tscn" id="2_sugp2"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_sgp6g"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_o5qli"]
+
 [node name="main" type="Node2D" unique_id=1142389016]
+script = ExtResource("1_sugp2")
+
+[node name="Background" type="TextureRect" parent="." unique_id=133209027]
+modulate = Color(0, 1, 1, 1)
+offset_right = 1152.0
+offset_bottom = 652.0
+scale = Vector2(1.0000504, 0.9939563)
+texture = SubResource("CanvasTexture_sgp6g")
+
+[node name="dirt" type="TextureRect" parent="." unique_id=66551664]
+modulate = Color(0.633506, 0.2983542, 0.07702575, 1)
+offset_top = 608.0
+offset_right = 40.0
+offset_bottom = 648.0
+scale = Vector2(28.798641, 1.0001837)
+texture = SubResource("CanvasTexture_o5qli")
+
+[node name="bird" parent="." unique_id=232894084 groups=["bird"] instance=ExtResource("1_0wfyh")]
+position = Vector2(250, 248)
+
+[node name="pipes" parent="." unique_id=1483097776 instance=ExtResource("2_sugp2")]
+position = Vector2(1113, -51)
+
+[connection signal="add_pipes" from="pipes" to="." method="_on_pipes_add_pipes"]

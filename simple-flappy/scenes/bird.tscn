@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bl1uy5rjiuk8i"]
+
+[ext_resource type="Script" uid="uid://dcogn7odts7t4" path="res://scripts/character_body_2d.gd" id="1_kqhkv"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0wfyh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
+size = Vector2(44, 44)
+
+[node name="bird" type="CharacterBody2D" unique_id=232894084]
+script = ExtResource("1_kqhkv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1320669008]
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(45, 45)
+texture = SubResource("CanvasTexture_0wfyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1065160222]
+shape = SubResource("RectangleShape2D_sugp2")
