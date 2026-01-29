@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 HighScore="*uid://basmaag1ch8dr"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="Simple_Flappy"
