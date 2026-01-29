@@ -1,19 +1,16 @@
 [gd_scene format=3 uid="uid://bl1uy5rjiuk8i"]
 
 [ext_resource type="Script" uid="uid://dcogn7odts7t4" path="res://scripts/character_body_2d.gd" id="1_kqhkv"]
+[ext_resource type="Texture2D" uid="uid://bu356fyxxhgaw" path="res://assets/BYU-Circle.png" id="2_3po83"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_0wfyh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
-size = Vector2(44, 44)
+[sub_resource type="CircleShape2D" id="CircleShape2D_hq4t0"]
+radius = 24.0
 
 [node name="bird" type="CharacterBody2D" unique_id=232894084]
 script = ExtResource("1_kqhkv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1320669008]
-modulate = Color(1, 1, 0, 1)
-scale = Vector2(45, 45)
-texture = SubResource("CanvasTexture_0wfyh")
+texture = ExtResource("2_3po83")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1065160222]
-shape = SubResource("RectangleShape2D_sugp2")
+shape = SubResource("CircleShape2D_hq4t0")

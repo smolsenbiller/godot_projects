@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://cl5i111tsbw42"]
 
 [ext_resource type="Script" uid="uid://cm12tr2o45oa7" path="res://scripts/pipes.gd" id="1_f17p0"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_sugp2"]
+[ext_resource type="Texture2D" uid="uid://dqcgu245dciai" path="res://assets/utah-pipes.png" id="2_3ahhd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(50, 500)
@@ -16,9 +15,7 @@ script = ExtResource("1_f17p0")
 [node name="top_pipe" type="Area2D" parent="." unique_id=1152217968]
 
 [node name="Sprite2D" type="Sprite2D" parent="top_pipe" unique_id=2091696714]
-modulate = Color(0, 1, 0, 1)
-scale = Vector2(50, 500)
-texture = SubResource("CanvasTexture_sugp2")
+texture = ExtResource("2_3ahhd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="top_pipe" unique_id=1029376706]
 shape = SubResource("RectangleShape2D_jyhfs")
@@ -27,9 +24,7 @@ shape = SubResource("RectangleShape2D_jyhfs")
 position = Vector2(0, 648)
 
 [node name="Sprite2D" type="Sprite2D" parent="bottom_pipe" unique_id=1383156942]
-modulate = Color(0, 1, 0, 1)
-scale = Vector2(50, 500)
-texture = SubResource("CanvasTexture_sugp2")
+texture = ExtResource("2_3ahhd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottom_pipe" unique_id=1902058555]
 shape = SubResource("RectangleShape2D_jyhfs")

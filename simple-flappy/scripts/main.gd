@@ -7,7 +7,7 @@ var score = 0
 @onready var timer : Timer = $Timer
 @onready var score_label : Label = $CanvasLayer/score_label
 @onready var start_info : Label = $CanvasLayer/start_info
-
+@onready var field : TextureRect = $Background
 func _ready() -> void:
 	start_info.text = "Press 'space' to start"
 
@@ -32,5 +32,5 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	var pipes = pipes_scene.instantiate()
 	add_child(pipes)
-	pipes.position.x = 1180
+	pipes.position.x = 665
 	pipes.position.y = randf_range(-215.0, 185.0)

@@ -18,10 +18,10 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.y = 0
 	
-	if global_position.y >= 586:
+	if global_position.y >= 615:
 		main.game_over = true
 	
-	if global_position.y <= 0:
+	if global_position.y <= 25:
 		main.game_over = true
 
 	move_and_slide()
