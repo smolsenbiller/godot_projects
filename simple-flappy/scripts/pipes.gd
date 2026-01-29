@@ -14,6 +14,8 @@ func _process(delta: float) -> void:
 			global_position.x -= pipe_speed * delta
 		else:
 			pass
+	if global_position.x <= -10:
+		queue_free()
 
 func _on_top_pipe_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("bird"):
