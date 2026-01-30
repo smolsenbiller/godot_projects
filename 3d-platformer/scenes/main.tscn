@@ -1,3 +1,129 @@
 [gd_scene format=3 uid="uid://c18lwib26bgu2"]
 
+[ext_resource type="ArrayMesh" uid="uid://nt526ew5itdb" path="res://Models/Platformer/block-grass-low-large.obj" id="1_o5qli"]
+[ext_resource type="ArrayMesh" uid="uid://cwhjysoc2pkg8" path="res://Models/Platformer/block-grass-low.obj" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://d1f2u7jsoj275" path="res://scenes/player.gd" id="3_jyhfs"]
+[ext_resource type="ArrayMesh" uid="uid://dstt6c0pctaaf" path="res://Models/Characters/character-male-b.obj" id="3_sugp2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
+
+[sub_resource type="Sky" id="Sky_sugp2"]
+sky_material = SubResource("ProceduralSkyMaterial_0wfyh")
+
+[sub_resource type="Environment" id="Environment_o5qli"]
+background_mode = 2
+background_color = Color(0.46684772, 0.8226845, 1, 1)
+sky = SubResource("Sky_sugp2")
+ambient_light_source = 2
+ambient_light_color = Color(0.78010154, 0.00015238195, 0.67777324, 1)
+fog_light_color = Color(0.5575733, 0.52324414, 0.68526477, 1)
+fog_sun_scatter = 0.21
+fog_density = 0.06
+fog_height = 2.0
+fog_height_density = 0.4
+adjustment_enabled = true
+adjustment_contrast = 1.2
+adjustment_saturation = 1.2
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sugp2"]
+points = PackedVector3Array(-0.9604686, 0, -0.712585, 1.022246, 0.37556842, 0.79854685, 0.92504716, 0.34350848, -0.9568746, -0.9768895, 0.5, 0.7563571, 0.8055162, 0, 0.929408, -0.7561676, 0.5, -0.97688717, -0.86729723, -2.7755576e-17, 0.89854425, 0.8674363, -2.7755576e-17, -0.89854425, 0.7563099, 0.5, 0.97688717, 0.9768344, 0.5, -0.7563571, -0.7985215, 0.37556326, 1.0222589, -0.7123999, 0, -0.9604659, -1.0220782, 0.40755552, -0.7665578, 0.9604135, 2.7755576e-17, -0.712585, 0.733024, 0.43908638, -1.0200285, -1.022261, 0.3755634, 0.79851556, 0.9604135, 0, 0.712585, 0.7984792, 0.37556532, 1.0222753, -0.7123999, 0, 0.9604659, -0.79852134, 0.37556323, -1.0222588, -0.9604686, 2.7755576e-17, 0.712585, 0.71253896, 0, -0.9604659, 1.022246, 0.37556842, -0.79854685, 0.9768344, 0.5, 0.7563571, -0.7561676, 0.5, 0.97688717, -0.9768895, 0.5, -0.7563571, 0.7563099, 0.5, -0.97688717, -0.9568596, 0.34350672, -0.9250816, 0.71253896, 0, 0.9604659, 0.95684505, 0.34351078, 0.9251208, 0.7984794, 0.37556535, -1.0222754, -0.86729723, -2.7755576e-17, -0.89854425)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jyhfs"]
+points = PackedVector3Array(-0.4975451, 0.0002877506, -0.23212606, 0.5274979, 0.3973974, 0.26374832, 0.49330443, 0.49576694, 0.24665056, 0.4313541, 0.38182694, -0.46461576, -0.49331594, 0.49575314, 0.24663676, 0.23215836, 0.0002729163, 0.4975317, 0.42947406, 0.0012336298, -0.3964471, -0.24661222, 0.49577487, -0.49331698, -0.4151125, 0, 0.41506457, -0.24661244, 0.49577507, 0.49331743, -0.23210481, 0.0002618235, -0.49755388, -0.46456861, 0.38183033, -0.4314622, 0.49753863, 0.00027099348, 0.2321417, 0.4313535, 0.38182676, 0.46461514, 0.49330443, 0.49576694, -0.24665056, 0.26376334, 0.3973965, -0.5274934, 0.5257767, 0.34765097, -0.26288766, -0.26370943, 0.39740214, 0.5275134, -0.5274822, 0.39741096, 0.26377243, -0.49331594, 0.49575314, -0.24663676, 0.24666677, 0.49576554, 0.49329832, 0.23215836, 0.0002729163, -0.4975317, -0.4181868, 0.5, 0.4181383, 0.39713305, 0.49734515, -0.4303043, -0.23210481, 0.0002618235, 0.49755388, -0.4975451, 0.0002877506, 0.23212606, -0.26370892, 0.39740184, -0.5275124, 0.26376283, 0.3973962, 0.5274924, -0.5274822, 0.39741096, -0.26377243, 0.49753863, 0.00027099348, -0.2321417, -0.4151125, 0, -0.41506457, 0.42947406, 0.0012336298, 0.3964471)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jyhfs"]
+radius = 0.1586914
+height = 0.6621094
+
 [node name="main" type="Node3D" unique_id=1171541825]
+
+[node name="Environment" type="Node" parent="." unique_id=1643823373]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=1266005556]
+environment = SubResource("Environment_o5qli")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=814876562]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.00032901764, 2, 0)
+shadow_enabled = true
+
+[node name="Platforms" type="Node" parent="." unique_id=1737141785]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platforms" unique_id=1541565426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00032901764, 0, 0)
+
+[node name="BlockGrassLowLarge" type="MeshInstance3D" parent="Platforms/StaticBody3D" unique_id=1931504973]
+mesh = ExtResource("1_o5qli")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/StaticBody3D" unique_id=2120918832]
+shape = SubResource("ConvexPolygonShape3D_sugp2")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Platforms" unique_id=875733024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00032901764, 0, -8.15885)
+
+[node name="BlockGrassLowLarge" type="MeshInstance3D" parent="Platforms/StaticBody3D2" unique_id=635091630]
+mesh = ExtResource("1_o5qli")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/StaticBody3D2" unique_id=885277149]
+shape = SubResource("ConvexPolygonShape3D_sugp2")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Platforms" unique_id=70543605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9024777, 0, -8.15885)
+
+[node name="BlockGrassLowLarge" type="MeshInstance3D" parent="Platforms/StaticBody3D3" unique_id=1798878732]
+mesh = ExtResource("1_o5qli")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/StaticBody3D3" unique_id=447552807]
+shape = SubResource("ConvexPolygonShape3D_sugp2")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="BlockGrassLow" type="StaticBody3D" parent="Platforms" unique_id=49729934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00032901764, 0, -2.824)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/BlockGrassLow" unique_id=837778519]
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="MeshShape" type="MeshInstance3D" parent="Platforms/BlockGrassLow" unique_id=1146185912]
+mesh = ExtResource("2_0wfyh")
+
+[node name="BlockGrassLow2" type="StaticBody3D" parent="Platforms" unique_id=1245673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00032901764, 0, -5.197617)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/BlockGrassLow2" unique_id=281182511]
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="MeshShape" type="MeshInstance3D" parent="Platforms/BlockGrassLow2" unique_id=1939796713]
+mesh = ExtResource("2_0wfyh")
+
+[node name="BlockGrassLow3" type="StaticBody3D" parent="Platforms" unique_id=1926190531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8101804, 0, -8.022648)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/BlockGrassLow3" unique_id=1874392966]
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="MeshShape" type="MeshInstance3D" parent="Platforms/BlockGrassLow3" unique_id=6707385]
+mesh = ExtResource("2_0wfyh")
+
+[node name="BlockGrassLow4" type="StaticBody3D" parent="Platforms" unique_id=1201907965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.250985, 0, -8.018665)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/BlockGrassLow4" unique_id=237891563]
+shape = SubResource("ConvexPolygonShape3D_jyhfs")
+
+[node name="MeshShape" type="MeshInstance3D" parent="Platforms/BlockGrassLow4" unique_id=7129608]
+mesh = ExtResource("2_0wfyh")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=219388351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("3_jyhfs")
+
+[node name="Model" type="MeshInstance3D" parent="Player" unique_id=32807499]
+mesh = ExtResource("3_sugp2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1992007295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32910156, 0)
+shape = SubResource("CapsuleShape3D_jyhfs")
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=1979159985]
+transform = Transform3D(1, 0, 0, 0, 0.9442673, 0.3291798, 0, -0.3291798, 0.9442673, 0, 1.105639, 2.1695805)
