@@ -26,4 +26,4 @@ position = Vector2(5, 0)
 sprite_frames = ExtResource("3_qhqgy")
 animation = &"gun"
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=90855141]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1791146713]

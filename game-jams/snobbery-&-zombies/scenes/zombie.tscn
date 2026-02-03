@@ -2,18 +2,28 @@
 
 [ext_resource type="Texture2D" uid="uid://bekfw6xbd1q84" path="res://assets/zombie.png" id="1_1vlb3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vlb3"]
+radius = 2.0615528
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vlb3"]
 size = Vector2(4, 15)
 
 [node name="zombie" type="CharacterBody2D" unique_id=1902990993]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 5
+collision_mask = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1016699576]
+position = Vector2(0, -6)
 texture = ExtResource("1_1vlb3")
 centered = false
 offset = Vector2(-56, -8)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1963523613]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_sugp2")
+[node name="feet" type="CollisionShape2D" parent="." unique_id=1963523613]
+shape = SubResource("CircleShape2D_1vlb3")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1861570419]
+unique_name_in_owner = true
+
+[node name="body" type="CollisionShape2D" parent="." unique_id=689587835]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_1vlb3")
