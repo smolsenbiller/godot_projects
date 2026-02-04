@@ -1,13 +1,17 @@
 class_name Zombie extends CharacterBody2D
 
-@onready var player: CharacterBody2D = %Player
+#Zombie Navigation Setup
+var player: CharacterBody2D
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-
 var speed: float = 20.0
 var target_position: Vector2
 
+#main node callback setup
+@onready var main : Node2D = $"."
 
 func _ready() -> void:
+	player = get_tree().get_first_node_in_group("player")
+	
 	nav_agent.path_desired_distance = 1.0
 	nav_agent.target_desired_distance = 1.0
 	
@@ -37,6 +41,6 @@ func _physics_process(delta):
 	velocity = current_agent_position.direction_to(next_path_position) * speed
 	move_and_slide()
 
-
 func hit():
 	queue_free()
+	roundInfo.zombies_left -= 1

@@ -3,9 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://xdwk8x7haa5o" path="res://assets/map.png" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bim7fdsr8xi34" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bxy37qxtu1cte" path="res://scripts/main.gd" id="1_tefeu"]
-[ext_resource type="PackedScene" uid="uid://bnok717jrsxeu" path="res://scenes/zombie.tscn" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://dapwke8s2ag04" path="res://assets/grave_spawn.png" id="2_tbgi4"]
-[ext_resource type="Script" uid="uid://dg11d5i52462k" path="res://scripts/zombie.gd" id="3_jyhfs"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jyhfs"]
 vertices = PackedVector2Array(88, 96, -87, 96, -17, 52, -13, 52, -43, 52, 88, -95, 44, 52, 44, -51, -87, -95, -43, -51, -17, -51, 19, -51, 19, -45, 15, -45, 15, -51, 38, -45, 38, 46, 19, 46, 15, 46, 19, 52, 15, 52, -13, -45, -13, 46, -17, 46, -37, 46, -37, -45, -17, -45, -13, -51)
@@ -86,11 +84,20 @@ polygon = PackedVector2Array(13, 48, 21, 48, 21, 50, 13, 50)
 unique_name_in_owner = true
 position = Vector2(2, -8)
 
-[node name="zombie" parent="." unique_id=1902990993 instance=ExtResource("2_sugp2")]
-position = Vector2(0, -80)
-script = ExtResource("3_jyhfs")
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=778408093]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D" unique_id=1045159839]
+
+[node name="RoundCount" type="Label" parent="Player/Camera2D/CanvasLayer" unique_id=234400965]
+modulate = Color(0.57, 0, 0, 1)
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 49.0
+offset_bottom = 28.0
+text = "1"
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=719104958]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_jyhfs")
 
 [node name="SpawnTopLeft" type="Sprite2D" parent="." unique_id=168384272]
