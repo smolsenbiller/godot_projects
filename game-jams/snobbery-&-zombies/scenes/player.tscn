@@ -4,22 +4,25 @@
 [ext_resource type="Texture2D" uid="uid://bncc5ni1ps65c" path="res://assets/player.png" id="2_qhqgy"]
 [ext_resource type="SpriteFrames" uid="uid://cgqvbcbpmuq2j" path="res://assets/gun.tres" id="3_qhqgy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
-size = Vector2(4, 15)
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
+radius = 2.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1871333918]
+z_index = 1
+collision_mask = 3
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2117436614]
+position = Vector2(0, -6)
 texture = ExtResource("2_qhqgy")
 centered = false
 offset = Vector2(-8, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2019816212]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_0xm2m")
+shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="Pivot_Anchor" type="Node2D" parent="." unique_id=349510029]
+position = Vector2(0, -6)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot_Anchor" unique_id=1628357136]
 position = Vector2(5, 0)
@@ -27,3 +30,4 @@ sprite_frames = ExtResource("3_qhqgy")
 animation = &"gun"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1791146713]
+position = Vector2(0, -6)

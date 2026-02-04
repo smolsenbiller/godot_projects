@@ -1,11 +1,11 @@
-extends CharacterBody2D
-class_name Zombie
+class_name Zombie extends CharacterBody2D
 
 @onready var player: CharacterBody2D = %Player
-@onready var nav_agent: NavigationAgent2D = %NavigationAgent2D
+@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 var speed: float = 20.0
 var target_position: Vector2
+
 
 func _ready() -> void:
 	nav_agent.path_desired_distance = 1.0
