@@ -1,10 +1,7 @@
 [gd_scene format=3 uid="uid://17du2m1y67ww"]
 
+[ext_resource type="Texture2D" uid="uid://b2wwdyq7wx3qd" path="res://assets/main-menu.png" id="1_vjb58"]
 [ext_resource type="Script" uid="uid://tjo3y4xueb5f" path="res://scripts/button.gd" id="1_yqeox"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_vjb58"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_con2f"]
 
 [node name="Menu" type="Control" unique_id=186876564]
 layout_mode = 3
@@ -21,32 +18,22 @@ modulate = Color(0.6, 0.6, 0.6, 1)
 offset_right = 1152.0
 offset_bottom = 648.0
 scale = Vector2(0.25008535, 0.25008535)
-texture = SubResource("CanvasTexture_vjb58")
-
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1183489863]
-offset_top = 13.0
-offset_right = 287.0
-offset_bottom = 161.0
-text = "Snobbery & Zombies
-"
-label_settings = SubResource("LabelSettings_con2f")
-horizontal_alignment = 1
+texture = ExtResource("1_vjb58")
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=793751738]
-offset_left = 94.0
-offset_top = 48.0
-offset_right = 193.0
-offset_bottom = 79.0
-text = "Start Game"
+modulate = Color(1, 1, 1, 0)
+offset_left = 101.0
+offset_top = 63.0
+offset_right = 187.0
+offset_bottom = 93.0
 script = ExtResource("1_yqeox")
 
 [node name="Button2" type="Button" parent="CanvasLayer" unique_id=934632045]
-offset_left = 95.0
-offset_top = 90.0
-offset_right = 194.0
-offset_bottom = 121.0
-text = "Quit
-"
+modulate = Color(1, 1, 1, 0)
+offset_left = 101.0
+offset_top = 115.0
+offset_right = 187.0
+offset_bottom = 145.0
 
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="CanvasLayer/Button" method="_on_button_2_pressed"]
