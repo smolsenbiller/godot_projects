@@ -3,12 +3,20 @@ extends Node2D
 #preloading the zombie scene because eventually I will be spawning a lot of zombies
 const zombie_scene = preload("res://scenes/zombie.tscn")
 
-#Get spawn point. Using a sprite as a refernce
-@onready var spawn_point : Sprite2D = $SpawnTopLeft
+#Get spawn points. Using a sprite as a refernce
+@onready var spawn_point1 : Sprite2D = $SpawnTopLeft
+@onready var spawn_point2 : Sprite2D = $SpawnTopRight
+@onready var spawn_point3 : Sprite2D = $SpawnBottomRight
+@onready var spawn_point4 : Sprite2D = $SpawnBottomLeft
+
 @onready var round_count : Label = $Player/Camera2D/CanvasLayer/RoundCount
 @onready var over_text : Label = $Player/Camera2D/CanvasLayer/GameOverText
+@onready var score_text : Label = $Player/Camera2D/CanvasLayer/PlayerScore
+
+var spawn_point : Sprite2D
 
 func _ready() -> void:
+	spawn_point = get_tree().get_nodes_in_group("spawns").pick_random()
 	#When the scene starts need to make sure we are on round 1
 	roundInfo.round = 1
 	#Need to make sure that only 4 zombies on this first round
@@ -22,7 +30,8 @@ func add_zombie():
 		#Instantiating the zombie scene and putting it into a vaiable
 		var new_zombie = zombie_scene.instantiate()
 		#Adding a position to the zombie variable
-		new_zombie.position = spawn_point.global_position
+		spawn_point = get_tree().get_nodes_in_group("spawns").pick_random()
+		new_zombie.position = spawn_point.position
 		#Adding the zombie to the main scene
 		add_child(new_zombie)
 		#Delay between zombie spawns
@@ -36,6 +45,7 @@ func round_change():
 	roundInfo.round += 1
 	round_count.text = str(roundInfo.round)
 	#This will add zombies after round 1 and increase the amount of zombies as well
+	zombie_health_calc(roundInfo.round)
 	zombies_left_calc(roundInfo.round)
 
 func zombies_left_calc(rounds : int):
@@ -43,16 +53,20 @@ func zombies_left_calc(rounds : int):
 	roundInfo.zombies_left = zombies_left
 	add_zombie()
 	return zombies_left
-	
+
+func zombie_health_calc(rounds : int):
+	var zombies_health = 20 + (rounds * 20)
+	roundInfo.zombie_health = zombies_health
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#Check to see if any zombies are left
-	if roundInfo.zombies_left == 0:
+	if roundInfo.zombies_left <= 0:
 		#Need to make sure the if statement fires only once at the end of a round
-		roundInfo.zombies_left += 1
+		roundInfo.zombies_left = 1
 		#Call a round change
 		round_change()
+	score_text.text = str(roundInfo.player_score)
 
 func game_over_sequence():
 	round_count.hide()

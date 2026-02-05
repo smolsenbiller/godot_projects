@@ -5,6 +5,7 @@ var gun_rotation: float
 var gun_direction: float
 var speed: float = 200.0
 var max_collisions: int = 1
+var damage : int = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -38,5 +39,10 @@ func _physics_process(delta: float) -> void:
 			collision_count += 1
 			collision = move_and_collide(remainder)
 	
-	
 	move_and_slide()
+
+
+func _on_area_2d_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	if not area.is_in_group("zombie"):
+		return
+	queue_free()

@@ -6,9 +6,14 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vlb3"]
 radius = 2.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_httt1"]
+size = Vector2(4, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xepks"]
+size = Vector2(4, 10)
+
 [node name="zombie" type="CharacterBody2D" unique_id=1902990993 groups=["zombie"]]
 z_index = 1
-collision_layer = 5
 motion_mode = 1
 script = ExtResource("1_httt1")
 
@@ -22,3 +27,22 @@ offset = Vector2(-56, -8)
 shape = SubResource("CircleShape2D_1vlb3")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1861570419]
+
+[node name="Head" type="Area2D" parent="." unique_id=1251842546 groups=["zombie"]]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head" unique_id=2146702355]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_httt1")
+
+[node name="Body" type="Area2D" parent="." unique_id=241960685 groups=["zombie"]]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body" unique_id=2074430354]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_xepks")
+
+[connection signal="body_entered" from="Head" to="." method="_on_head_body_entered"]
+[connection signal="body_entered" from="Body" to="." method="_on_body_body_entered"]

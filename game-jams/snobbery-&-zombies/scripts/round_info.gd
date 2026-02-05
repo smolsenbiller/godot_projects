@@ -1,8 +1,9 @@
 extends Node
 
 var round : int = 1
-var zombies_left = 5
-
+var zombies_left : int = 5
+var zombie_health : int = 40
+var player_score : int = 0
 func _ready() -> void:
 	pass # Replace with function body.
 

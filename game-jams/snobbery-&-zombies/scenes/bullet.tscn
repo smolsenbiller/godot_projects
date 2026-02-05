@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y25gk"]
 size = Vector2(1, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5glv"]
+size = Vector2(1, 1)
+
 [node name="bullet" type="CharacterBody2D" unique_id=920290066 groups=["bullet"]]
 z_index = 1
 collision_layer = 4
@@ -21,3 +24,13 @@ offset = Vector2(-40, -8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1277451917]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_y25gk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=914283530]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=458942905]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_l5glv")
+
+[connection signal="area_shape_exited" from="Area2D" to="." method="_on_area_2d_area_shape_exited"]

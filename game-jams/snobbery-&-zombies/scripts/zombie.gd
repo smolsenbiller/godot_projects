@@ -9,7 +9,11 @@ var target_position: Vector2
 #main node callback setup
 @onready var main : Node2D = $"."
 
+var health : int
+
 func _ready() -> void:
+	health = roundInfo.zombie_health
+	
 	player = get_tree().get_first_node_in_group("player")
 	
 	nav_agent.path_desired_distance = 1.0
@@ -41,6 +45,26 @@ func _physics_process(delta):
 	velocity = current_agent_position.direction_to(next_path_position) * speed
 	move_and_slide()
 
-func hit():
-	queue_free()
-	roundInfo.zombies_left -= 1
+
+func _on_head_body_entered(body: Node2D) -> void:
+	if not body.is_in_group("bullet"):
+		return
+	health -= body.damage * 2
+	if health <= 0:
+		roundInfo.player_score += 100
+		queue_free()
+		roundInfo.zombies_left -= 1
+	else:
+		roundInfo.player_score += 10
+
+
+func _on_body_body_entered(body: Node2D) -> void:
+	if not body.is_in_group("bullet"):
+		return
+	health -= body.damage
+	if health <= 0:
+		roundInfo.player_score += 60
+		queue_free()
+		roundInfo.zombies_left -= 1
+	else:
+		roundInfo.player_score += 10
