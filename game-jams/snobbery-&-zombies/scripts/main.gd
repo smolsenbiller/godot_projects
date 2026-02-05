@@ -6,6 +6,7 @@ const zombie_scene = preload("res://scenes/zombie.tscn")
 #Get spawn point. Using a sprite as a refernce
 @onready var spawn_point : Sprite2D = $SpawnTopLeft
 @onready var round_count : Label = $Player/Camera2D/CanvasLayer/RoundCount
+@onready var over_text : Label = $Player/Camera2D/CanvasLayer/GameOverText
 
 func _ready() -> void:
 	#When the scene starts need to make sure we are on round 1
@@ -52,3 +53,16 @@ func _process(delta: float) -> void:
 		roundInfo.zombies_left += 1
 		#Call a round change
 		round_change()
+
+func game_over_sequence():
+	round_count.hide()
+	
+	if roundInfo.round > 1:
+		over_text.text = "You survived " + str(roundInfo.round) + " rounds"
+	else:
+		over_text.text = "You survived " + str(roundInfo.round) + " round"
+	
+	over_text.show()
+	await get_tree().create_timer(5.0).timeout
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	

@@ -96,6 +96,15 @@ offset_right = 49.0
 offset_bottom = 28.0
 text = "1"
 
+[node name="GameOverText" type="Label" parent="Player/Camera2D/CanvasLayer" unique_id=636342486]
+visible = false
+modulate = Color(0.5686275, 0, 0, 1)
+offset_left = 51.0
+offset_top = 64.0
+offset_right = 223.0
+offset_bottom = 87.0
+text = "You survived x rounds"
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=719104958]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_jyhfs")

@@ -7,6 +7,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 2.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
+radius = 3.0
+
 [node name="Player" type="CharacterBody2D" unique_id=1871333918 groups=["player"]]
 z_index = 1
 collision_mask = 3
@@ -29,3 +32,11 @@ position = Vector2(0, -6)
 position = Vector2(5, 0)
 sprite_frames = ExtResource("3_qhqgy")
 animation = &"gun"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1111797643]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1014829900]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_dqkch")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

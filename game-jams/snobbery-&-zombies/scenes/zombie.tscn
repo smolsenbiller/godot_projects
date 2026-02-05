@@ -6,9 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vlb3"]
 radius = 2.0
 
-[node name="zombie" type="CharacterBody2D" unique_id=1902990993]
+[node name="zombie" type="CharacterBody2D" unique_id=1902990993 groups=["zombie"]]
 z_index = 1
-collision_layer = 4
+collision_layer = 5
 motion_mode = 1
 script = ExtResource("1_httt1")
 

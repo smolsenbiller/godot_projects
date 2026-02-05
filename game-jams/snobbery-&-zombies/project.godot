@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Snobbery & Zombies"
-run/main_scene="uid://bytsv41nrqkoe"
+run/main_scene="uid://17du2m1y67ww"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
