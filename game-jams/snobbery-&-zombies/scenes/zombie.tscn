@@ -13,7 +13,6 @@ size = Vector2(4, 5)
 size = Vector2(4, 10)
 
 [node name="zombie" type="CharacterBody2D" unique_id=1902990993 groups=["zombie"]]
-z_index = 1
 motion_mode = 1
 script = ExtResource("1_httt1")
 

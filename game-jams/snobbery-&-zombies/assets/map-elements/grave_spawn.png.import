@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dapwke8s2ag04"
-path="res://.godot/imported/grave_spawn.png-1f5a449041fc998ab6404add3de3ef4a.ctex"
+path="res://.godot/imported/grave_spawn.png-453dd68b350c59fc54fca77a47d070be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/grave_spawn.png"
-dest_files=["res://.godot/imported/grave_spawn.png-1f5a449041fc998ab6404add3de3ef4a.ctex"]
+source_file="res://assets/map-elements/grave_spawn.png"
+dest_files=["res://.godot/imported/grave_spawn.png-453dd68b350c59fc54fca77a47d070be.ctex"]
 
 [params]
 

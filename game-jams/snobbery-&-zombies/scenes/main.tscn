@@ -1,93 +1,180 @@
 [gd_scene format=3 uid="uid://bytsv41nrqkoe"]
 
-[ext_resource type="Texture2D" uid="uid://xdwk8x7haa5o" path="res://assets/map.png" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bim7fdsr8xi34" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bxy37qxtu1cte" path="res://scripts/main.gd" id="1_tefeu"]
-[ext_resource type="Texture2D" uid="uid://dapwke8s2ag04" path="res://assets/grave_spawn.png" id="2_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://dapwke8s2ag04" path="res://assets/map-elements/grave_spawn.png" id="2_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://c52fbqybavmr7" path="res://assets/map-elements/new_map_foundation.png" id="2_tefeu"]
+[ext_resource type="Texture2D" uid="uid://2pla1kffgq5b" path="res://assets/map-elements/upper-wall.png" id="3_o6xl0"]
+[ext_resource type="Script" uid="uid://cviuivn1uaau7" path="res://scripts/middle_wall.gd" id="4_85g3d"]
+[ext_resource type="Texture2D" uid="uid://d0isa1uqyr07k" path="res://assets/map-elements/middle-walll.png" id="4_tipki"]
+[ext_resource type="Texture2D" uid="uid://b5p8gae3whcfa" path="res://assets/map-elements/lower-wall.png" id="5_o6xl0"]
+[ext_resource type="Script" uid="uid://n1g71wk8jk5e" path="res://scenes/lower_wall.gd" id="6_85g3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85g3d"]
+size = Vector2(72, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tefeu"]
+size = Vector2(72, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tipki"]
+size = Vector2(159, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_choun"]
+size = Vector2(72, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ya4ey"]
+size = Vector2(72, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eb6dy"]
+size = Vector2(8, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trceg"]
+size = Vector2(8, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8y0u"]
+size = Vector2(8, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6xl0"]
+size = Vector2(8, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
 font_size = 8
 shadow_size = 2
 shadow_offset = Vector2(0, 0)
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_jyhfs"]
-vertices = PackedVector2Array(88, 96, -87, 96, -17, 52, -13, 52, -43, 52, 88, -95, 44, 52, 44, -51, -87, -95, -43, -51, -17, -51, 19, -51, 19, -45, 15, -45, 15, -51, 38, -45, 38, 46, 19, 46, 15, 46, 19, 52, 15, 52, -13, -45, -13, 46, -17, 46, -37, 46, -37, -45, -17, -45, -13, -51)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 2, 1), PackedInt32Array(5, 0, 6, 7), PackedInt32Array(4, 1, 8, 9), PackedInt32Array(9, 8, 5, 10), PackedInt32Array(11, 12, 13, 14), PackedInt32Array(12, 15, 16, 17), PackedInt32Array(13, 12, 17, 18), PackedInt32Array(17, 19, 20, 18), PackedInt32Array(21, 13, 18, 22), PackedInt32Array(23, 24, 25, 26), PackedInt32Array(5, 7, 11), PackedInt32Array(19, 6, 0), PackedInt32Array(5, 11, 14), PackedInt32Array(20, 19, 0), PackedInt32Array(5, 14, 27), PackedInt32Array(10, 5, 27), PackedInt32Array(10, 27, 21, 26), PackedInt32Array(26, 21, 22, 23), PackedInt32Array(23, 22, 3, 2), PackedInt32Array(0, 3, 20)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-89, -97, -71.67209, -97.00001, -55.988697, -96.99999, -32.432526, -96.999985, -7.5357666, -96.99998, 16.020401, -96.99998, 39.959595, -96.99998, 62.74971, -96.999985, 90, -97, 90.00001, -64.193886, 90, -29, 90, -5, 89.99999, 19.35669, 89.999985, 43.572075, 89.999985, 67.141045, 89.99999, 80.986725, 90, 98, 79.48058, 97.99999, 65.56993, 98, 51, 98, 40, 98, 28.040993, 97.99999, 16.451878, 98, 4, 98, -8.163502, 98, -32, 98, -55.52497, 98, -71, 98, -89, 98, -88.99999, 83.49448, -88.999985, 67.12877, -89, 43, -88.999985, 17.96201, -88.99998, -5.019619, -88.99998, -29.341839, -88.99998, -53.230297, -88.99998, -76.90834), PackedVector2Array(-19, -49, -29.665108, -49, -41, -49, -40.999996, -30.890491, -40.999996, -14.361334, -40.999992, 1.3354187, -40.999992, 17.62675, -40.999992, 33.561344, -41, 50, -29.03318, 50, -19, 50, -19, 48, -30, 48, -39, 48, -39, 34, -39, 16.450943, -39.000008, -6.4071884, -39.000008, -23.260384, -39.000008, -36.283302, -39, -47, -29.370277, -47, -19, -47), PackedVector2Array(13, 48, 1.2012329, 48, -11, 48, -11, 50, 1.3753357, 50, 13, 50), PackedVector2Array(21, 48, 21, 50, 30.102371, 50, 42, 50, 42, 39.747585, 42, 24.80952, 42, 9.488438, 42, -5.258106, 42, -22.111301, 42.000008, -38.77297, 42, -49, 32.75267, -48.999996, 21, -49, 21, -47, 31.412079, -46.999996, 40, -47, 40, -38.77297, 40, -23.451885, 40, -6.7902145, 40, 9.296925, 40, 22.894386, 40, 38.5985, 40, 48, 29.754166, 48), PackedVector2Array(13, -49, 0.9634609, -49, -11, -49, -11, -47, 0.7803936, -47.000004, 13, -47)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_o6xl0"]
+vertices = PackedVector2Array(257, 289, 2, 289, 88, 245, 92, 245, 207, 52, 207, 239, 172, 239, 168, 154, 168, 136, 172, 52, 46, 245, 257, 2, 213, 245, 213, 46, 2, 2, 46, 46, 88, 46, 168, 52, 172, 46, 168, 46, 92, 52, 92, 136, 172, 245, 168, 245, 168, 239, 92, 154, 92, 239, 88, 239, 52, 239, 52, 52, 88, 52, 92, 46)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8, 9), PackedInt32Array(10, 2, 1), PackedInt32Array(11, 0, 12, 13), PackedInt32Array(10, 1, 14, 15), PackedInt32Array(15, 14, 11, 16), PackedInt32Array(9, 8, 17, 18), PackedInt32Array(18, 17, 19), PackedInt32Array(20, 17, 8, 21), PackedInt32Array(6, 22, 23, 24), PackedInt32Array(7, 6, 24, 25), PackedInt32Array(25, 24, 26), PackedInt32Array(27, 28, 29, 30, 21, 25), PackedInt32Array(11, 13, 18), PackedInt32Array(22, 12, 0), PackedInt32Array(11, 18, 19), PackedInt32Array(23, 22, 0), PackedInt32Array(11, 19, 31), PackedInt32Array(16, 11, 31), PackedInt32Array(16, 31, 20, 30), PackedInt32Array(30, 20, 21), PackedInt32Array(27, 25, 26), PackedInt32Array(27, 26, 3, 2), PackedInt32Array(0, 3, 23)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 0, 259, 0, 259, 291, 0, 291), PackedVector2Array(86, 50, 86, 48, 48, 48, 48, 243, 86, 243, 86, 241, 50, 241, 50, 50), PackedVector2Array(94, 48, 94, 50, 166, 50, 166, 48), PackedVector2Array(211, 48, 174, 48, 174, 50, 209, 50, 209, 241, 174, 241, 174, 243, 211, 243), PackedVector2Array(166, 241, 94, 241, 94, 243, 166, 243), PackedVector2Array(166, 138, 94, 138, 94, 152, 166, 152)])
 agent_radius = 2.0
 
 [node name="main" type="Node2D" unique_id=635146039]
+y_sort_enabled = true
 script = ExtResource("1_tefeu")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2104748532]
-z_as_relative = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -89.5
-offset_top = -97.5
-offset_right = 89.5
-offset_bottom = 97.5
+offset_right = 259.0
+offset_bottom = 291.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_jyhfs")
+texture = ExtResource("2_tefeu")
 stretch_mode = 4
+
+[node name="UpperWall" type="Sprite2D" parent="." unique_id=174620357]
+position = Vector2(50, 48)
+texture = ExtResource("3_o6xl0")
+centered = false
+offset = Vector2(0, -16)
+region_enabled = true
+region_rect = Rect2(50, 32, 159, 18)
+
+[node name="MiddleWall" type="Area2D" parent="." unique_id=754485843]
+position = Vector2(94, 152)
+script = ExtResource("4_85g3d")
+
+[node name="Sprite2D" type="Sprite2D" parent="MiddleWall" unique_id=1423360774]
+position = Vector2(0, -30)
+texture = ExtResource("4_tipki")
+centered = false
+region_enabled = true
+region_rect = Rect2(94, 122, 72, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleWall" unique_id=132556320]
+position = Vector2(36, -22)
+shape = SubResource("RectangleShape2D_85g3d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MiddleWall" unique_id=1156331685]
+position = Vector2(0, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleWall/StaticBody2D" unique_id=338240743]
+position = Vector2(36, 23)
+shape = SubResource("RectangleShape2D_tefeu")
+
+[node name="LowerWall" type="Area2D" parent="." unique_id=306249351]
+position = Vector2(50, 241)
+script = ExtResource("6_85g3d")
+
+[node name="Sprite2D" type="Sprite2D" parent="LowerWall" unique_id=752015345]
+position = Vector2(0, -16)
+texture = ExtResource("5_o6xl0")
+centered = false
+region_enabled = true
+region_rect = Rect2(50, 225, 159, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerWall" unique_id=1065427325]
+position = Vector2(79.5, -8)
+shape = SubResource("RectangleShape2D_tipki")
 
 [node name="WallCollisions" type="Node" parent="." unique_id=474789653]
 
 [node name="RightWall" type="StaticBody2D" parent="WallCollisions" unique_id=1292342547]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="WallCollisions/RightWall" unique_id=1877414361]
-polygon = PackedVector2Array(21, -47, 21, -49, 42, -49, 42, 50, 21, 50, 21, 48, 40, 48, 40, -47)
+polygon = PackedVector2Array(174, 48, 211, 48, 211, 243, 174, 243, 174, 241, 209, 241, 209, 50, 174, 50)
 
 [node name="LeftWall" type="StaticBody2D" parent="WallCollisions" unique_id=564510225]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="WallCollisions/LeftWall" unique_id=458786746]
-polygon = PackedVector2Array(-19, 48, -19, 50, -41, 50, -41, -49, -19, -49, -19, -47, -39, -47, -39, 48)
+polygon = PackedVector2Array(86, 48, 86, 50, 50, 50, 50, 241, 86, 241, 86, 243, 48, 243, 48, 48)
 
 [node name="BottomMiddleWall" type="StaticBody2D" parent="WallCollisions" unique_id=553037892]
+position = Vector2(94, 241)
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="WallCollisions/BottomMiddleWall" unique_id=1660470885]
-polygon = PackedVector2Array(-11, 48, 13, 48, 13, 50, -11, 50)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCollisions/BottomMiddleWall" unique_id=1523227266]
+position = Vector2(36, 1)
+shape = SubResource("RectangleShape2D_choun")
 
 [node name="TopMiddleWall" type="StaticBody2D" parent="WallCollisions" unique_id=367650395]
+position = Vector2(94, 48)
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="WallCollisions/TopMiddleWall" unique_id=151810860]
-polygon = PackedVector2Array(-11, -49, 13, -49, 13, -47, -11, -47)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCollisions/TopMiddleWall" unique_id=1231452324]
+position = Vector2(36, 1)
+shape = SubResource("RectangleShape2D_ya4ey")
 
 [node name="TopLeftWindow" type="StaticBody2D" parent="WallCollisions" unique_id=805726934]
+position = Vector2(86, 48)
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="WallCollisions/TopLeftWindow" unique_id=730267623]
-polygon = PackedVector2Array(-19, -49, -11, -49, -11, -47, -19, -47)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCollisions/TopLeftWindow" unique_id=1661601556]
+position = Vector2(4, 1)
+shape = SubResource("RectangleShape2D_eb6dy")
 
 [node name="TopRightWindow" type="StaticBody2D" parent="WallCollisions" unique_id=1781097934]
+position = Vector2(166, 48)
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="WallCollisions/TopRightWindow" unique_id=1652794080]
-polygon = PackedVector2Array(13, -49, 21, -49, 21, -47, 13, -47)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCollisions/TopRightWindow" unique_id=624774729]
+position = Vector2(4, 1)
+shape = SubResource("RectangleShape2D_trceg")
 
 [node name="BottomLeftWindow" type="StaticBody2D" parent="WallCollisions" unique_id=1909451426]
+position = Vector2(86, 241)
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="WallCollisions/BottomLeftWindow" unique_id=324745699]
-polygon = PackedVector2Array(-19, 48, -11, 48, -11, 50, -19, 50)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCollisions/BottomLeftWindow" unique_id=2043834692]
+position = Vector2(4, 1)
+shape = SubResource("RectangleShape2D_a8y0u")
 
 [node name="BottomRightWindow" type="StaticBody2D" parent="WallCollisions" unique_id=1124488086]
+position = Vector2(166, 241)
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="WallCollisions/BottomRightWindow" unique_id=1392102708]
-polygon = PackedVector2Array(13, 48, 21, 48, 21, 50, 13, 50)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCollisions/BottomRightWindow" unique_id=1928176704]
+position = Vector2(4, 1)
+shape = SubResource("RectangleShape2D_o6xl0")
 
 [node name="Player" parent="." unique_id=1871333918 instance=ExtResource("1_o5qli")]
 unique_name_in_owner = true
-position = Vector2(2, -8)
+position = Vector2(123, 191)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=778408093]
 
@@ -121,28 +208,33 @@ vertical_alignment = 1
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=719104958]
 visible = false
-navigation_polygon = SubResource("NavigationPolygon_jyhfs")
+navigation_polygon = SubResource("NavigationPolygon_o6xl0")
 
 [node name="SpawnTopLeft" type="Sprite2D" parent="." unique_id=168384272 groups=["spawns"]]
-position = Vector2(-69, -85)
+position = Vector2(24, 16)
 texture = ExtResource("2_tbgi4")
 region_enabled = true
 region_rect = Rect2(8, 0, 8, 16)
 
 [node name="SpawnTopRight" type="Sprite2D" parent="." unique_id=981349967 groups=["spawns"]]
-position = Vector2(70, -85)
+position = Vector2(238, 17)
 texture = ExtResource("2_tbgi4")
 region_enabled = true
 region_rect = Rect2(8, 0, 8, 16)
 
 [node name="SpawnBottomRight" type="Sprite2D" parent="." unique_id=652633105 groups=["spawns"]]
-position = Vector2(70, 68)
+position = Vector2(236, 268)
 texture = ExtResource("2_tbgi4")
 region_enabled = true
 region_rect = Rect2(8, 0, 8, 16)
 
 [node name="SpawnBottomLeft" type="Sprite2D" parent="." unique_id=956873161 groups=["spawns"]]
-position = Vector2(-66, 68)
+position = Vector2(20, 268)
 texture = ExtResource("2_tbgi4")
 region_enabled = true
 region_rect = Rect2(8, 0, 8, 16)
+
+[connection signal="body_entered" from="MiddleWall" to="MiddleWall" method="_on_body_entered"]
+[connection signal="body_exited" from="MiddleWall" to="MiddleWall" method="_on_body_exited"]
+[connection signal="body_entered" from="LowerWall" to="LowerWall" method="_on_body_entered"]
+[connection signal="body_exited" from="LowerWall" to="LowerWall" method="_on_body_exited"]
