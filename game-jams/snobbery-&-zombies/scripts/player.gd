@@ -14,10 +14,7 @@ var max_collisions : int = 1
 func get_input():
 	var input_direction = Input.get_vector("move_left","move_right","move_up","move_down")
 	velocity = input_direction * speed
-	if velocity.x < 0:
-		sprite.flip_h = true
-	elif velocity.x > 0:
-		sprite.flip_h = false
+
 
 func _physics_process(delta: float) -> void:
 	get_input()
@@ -29,8 +26,10 @@ func _physics_process(delta: float) -> void:
 	var mouse_position = get_global_mouse_position()
 	pivot.look_at(mouse_position)
 	if get_local_mouse_position().x < 0:
+		sprite.flip_h = true
 		gun_sprite.flip_v = true
 	else:
+		sprite.flip_h = false
 		gun_sprite.flip_v = false
 	
 	if Input.is_action_just_pressed("left_click"):
@@ -50,6 +49,7 @@ func fire():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("zombie"):
 		return
+	await get_tree().process_frame
 	process_mode = $".".PROCESS_MODE_DISABLED
 	main.game_over_sequence()
 	
