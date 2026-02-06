@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://bim7fdsr8xi34"]
 
 [ext_resource type="Script" uid="uid://b74aou0ci4tp8" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://bncc5ni1ps65c" path="res://assets/player.png" id="2_qhqgy"]
-[ext_resource type="SpriteFrames" uid="uid://cgqvbcbpmuq2j" path="res://assets/gun.tres" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://mrk75asc6cs2" path="res://assets/arm.png" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://cpg3u6vw1af0n" path="res://assets/gun.png" id="3_qhqgy"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qlg0r"]
+load_path = "res://.godot/imported/player.png-be2216fcaabb5c62aa2466cd9a5726a8.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 2.0
@@ -10,16 +13,148 @@ radius = 2.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
 radius = 3.0
 
-[node name="Player" type="CharacterBody2D" unique_id=1871333918 groups=["player"]]
+[sub_resource type="Animation" id="Animation_dqkch"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CompressedTexture2D_qlg0r")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -6)]
+}
+
+[sub_resource type="Animation" id="Animation_qlg0r"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CompressedTexture2D_qlg0r")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -6), Vector2(0, -6.5)]
+}
+
+[sub_resource type="Animation" id="Animation_qhqgy"]
+resource_name = "wiggle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CompressedTexture2D_qlg0r")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.08726646259971647, 0.0, -0.08726646259971647]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dqkch"]
+_data = {
+&"RESET": SubResource("Animation_dqkch"),
+&"idle": SubResource("Animation_qlg0r"),
+&"wiggle": SubResource("Animation_qhqgy")
+}
+
+[node name="Player" type="CharacterBody2D" unique_id=1871333918 node_paths=PackedStringArray("animator", "sprite", "gun_sprite") groups=["player"]]
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_g2els")
+animator = NodePath("AnimationPlayer")
+sprite = NodePath("Sprite2D")
+gun_sprite = NodePath("Pivot_Anchor/gunSprite")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2117436614]
 position = Vector2(0, -6)
-texture = ExtResource("2_qhqgy")
+texture = SubResource("CompressedTexture2D_qlg0r")
 centered = false
-offset = Vector2(-8, -8)
+offset = Vector2(-6, -8)
+region_enabled = true
+region_rect = Rect2(2, 0, 12, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2019816212]
 shape = SubResource("CircleShape2D_qhqgy")
@@ -27,15 +162,25 @@ shape = SubResource("CircleShape2D_qhqgy")
 [node name="Pivot_Anchor" type="Node2D" parent="." unique_id=349510029]
 position = Vector2(0, -6)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pivot_Anchor" unique_id=1628357136]
+[node name="gunSprite" type="Sprite2D" parent="Pivot_Anchor" unique_id=364264047]
 position = Vector2(5, 0)
-sprite_frames = ExtResource("3_qhqgy")
-animation = &"gun"
+texture = ExtResource("3_qhqgy")
+region_enabled = true
+region_rect = Rect2(22, 7, 4, 3)
+
+[node name="arm" type="Sprite2D" parent="Pivot_Anchor" unique_id=712898540]
+position = Vector2(2, 0)
+texture = ExtResource("3_dqkch")
+region_enabled = true
+region_rect = Rect2(0, 16, 4, 1)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1111797643]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1014829900]
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_dqkch")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1135478141]
+libraries/ = SubResource("AnimationLibrary_dqkch")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

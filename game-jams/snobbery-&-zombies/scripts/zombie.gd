@@ -10,6 +10,8 @@ var target_position: Vector2
 @onready var main : Node2D = $"."
 
 var health : int
+@onready var animator : AnimationPlayer = $AnimationPlayer
+@onready var sprite : Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	health = roundInfo.zombie_health
@@ -35,16 +37,25 @@ func _process(delta: float) -> void:
 	target_position = player.position
 	set_movement_target(target_position)
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	if nav_agent.is_navigation_finished():
 		return
-
+	
+	play_animation()
+	
 	var current_agent_position: Vector2 = global_position
 	var next_path_position: Vector2 = nav_agent.get_next_path_position()
-
+	
 	velocity = current_agent_position.direction_to(next_path_position) * speed
 	move_and_slide()
 
+func play_animation():
+	if velocity != Vector2(0,0):
+		animator.play("walking")
+	if velocity.x > 0:
+		sprite.flip_h = true
+	elif  velocity.x < 0:
+		sprite.flip_h = false
 
 func _on_head_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("bullet"):

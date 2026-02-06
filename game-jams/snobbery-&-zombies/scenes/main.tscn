@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://cviuivn1uaau7" path="res://scripts/middle_wall.gd" id="4_85g3d"]
 [ext_resource type="Texture2D" uid="uid://d0isa1uqyr07k" path="res://assets/map-elements/middle-walll.png" id="4_tipki"]
 [ext_resource type="Texture2D" uid="uid://b5p8gae3whcfa" path="res://assets/map-elements/lower-wall.png" id="5_o6xl0"]
-[ext_resource type="Script" uid="uid://n1g71wk8jk5e" path="res://scenes/lower_wall.gd" id="6_85g3d"]
+[ext_resource type="Script" uid="uid://n1g71wk8jk5e" path="res://scripts/lower_wall.gd" id="6_85g3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85g3d"]
 size = Vector2(72, 16)
