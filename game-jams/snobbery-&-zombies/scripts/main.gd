@@ -3,12 +3,6 @@ extends Node2D
 #preloading the zombie scene because eventually I will be spawning a lot of zombies
 const zombie_scene = preload("res://scenes/zombie.tscn")
 
-#Get spawn points. Using a sprite as a refernce
-@onready var spawn_point1 : Sprite2D = $SpawnTopLeft
-@onready var spawn_point2 : Sprite2D = $SpawnTopRight
-@onready var spawn_point3 : Sprite2D = $SpawnBottomRight
-@onready var spawn_point4 : Sprite2D = $SpawnBottomLeft
-
 @onready var round_count : Label = $Player/Camera2D/CanvasLayer/RoundCount
 @onready var over_text : Label = $Player/Camera2D/CanvasLayer/GameOverText
 @onready var score_text : Label = $Player/Camera2D/CanvasLayer/PlayerScore
@@ -22,7 +16,7 @@ func _ready() -> void:
 	#Need to make sure that only 4 zombies on this first round
 	roundInfo.zombies_left = 4
 	# Start adding zombies
-	roundInfo.player_score = 0
+	roundInfo.player_score = 2000
 	add_zombie()
 	
 
@@ -50,13 +44,13 @@ func round_change():
 	zombies_left_calc(roundInfo.round)
 
 func zombies_left_calc(rounds : int):
-	var zombies_left = rounds * 4
+	var zombies_left = rounds * 3
 	roundInfo.zombies_left = zombies_left
 	add_zombie()
 	return zombies_left
 
 func zombie_health_calc(rounds : int):
-	var zombies_health = 20 + (rounds * 20)
+	var zombies_health = (rounds * 20)
 	roundInfo.zombie_health = zombies_health
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

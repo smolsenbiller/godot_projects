@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://pcyspm7sud0f"]
+
+[ext_resource type="AudioStream" uid="uid://bgf5sw3cxb6tf" path="res://assets/sounds/Vivaldi's Winter, The Four Seasons -- Super Classical Music Megabot.mp3" id="1_k6dxv"]
+
+[node name="MainMusic" type="AudioStreamPlayer2D" unique_id=1457442471]
+stream = ExtResource("1_k6dxv")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
