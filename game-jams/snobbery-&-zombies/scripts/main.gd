@@ -16,7 +16,7 @@ func _ready() -> void:
 	#Need to make sure that only 4 zombies on this first round
 	roundInfo.zombies_left = 4
 	# Start adding zombies
-	roundInfo.player_score = 2000
+	roundInfo.player_score = 500
 	add_zombie()
 	
 

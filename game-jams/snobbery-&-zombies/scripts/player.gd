@@ -63,6 +63,8 @@ func fire():
 		bullet.gun_rotation = pivot.rotation
 		get_parent().add_child(bullet)
 		gun_sprite.ammo_calc()
+	elif gun_sprite.active_ammo <= 0:
+		gun_sprite.reload_calc()
 
 func shotgun_fire():
 	if gun_sprite.active_ammo > 0:
@@ -75,6 +77,8 @@ func shotgun_fire():
 			bullet.gun_rotation = pivot.rotation + add_rad
 			get_parent().add_child(bullet)
 		gun_sprite.ammo_calc()
+	elif gun_sprite.active_ammo <= 0:
+		gun_sprite.reload_calc()
 
 func shotgun_ammo():
 	gun_sprite.max_ammo = 40

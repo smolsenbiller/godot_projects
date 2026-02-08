@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 roundInfo="*uid://bm6yoovuv3vui"
-MainMusic="*uid://pcyspm7sud0f"
 
 [display]
 
