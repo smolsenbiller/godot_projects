@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bb04ryrust1bi" path="res://scripts/player_visual.gd" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://b4ejthuv2gg0" path="res://Sprites/hud_heartFull.png" id="4_dqkch"]
 [ext_resource type="Script" uid="uid://ctxlyadk1a6if" path="res://scripts/player_ui.gd" id="4_qlg0r"]
+[ext_resource type="Script" uid="uid://2obwq033j4fd" path="res://scripts/camera_shake.gd" id="4_tuyoq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jyhfs"]
 radius = 0.1586914
@@ -29,6 +30,7 @@ shape = SubResource("CapsuleShape3D_jyhfs")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=262083896]
 transform = Transform3D(-1, 2.8750433e-08, -8.256e-08, 0, 0.94437635, 0.32886663, 8.742278e-08, 0.32886663, -0.94437635, 0, 1.0884585, -1.889719)
+script = ExtResource("4_tuyoq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1305189637]
 script = ExtResource("4_qlg0r")
