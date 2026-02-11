@@ -8,8 +8,6 @@ var hearts : Array = []
 func _ready() -> void:
 	hearts = health_container.get_children()
 	
-	print(hearts)
-	
 	var player = get_parent()
 	
 	player.OnTakeDamage.connect(_update_hearts)

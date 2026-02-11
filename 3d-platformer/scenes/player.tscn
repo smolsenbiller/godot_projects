@@ -58,3 +58,5 @@ offset_right = 235.0
 offset_bottom = 160.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_dqkch")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=318745619]

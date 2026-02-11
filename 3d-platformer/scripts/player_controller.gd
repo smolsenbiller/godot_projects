@@ -11,6 +11,10 @@ signal OnUpdateScore(score : int)
 @export var gravity : float = 20.0
 
 @onready var camera : Camera3D = $Camera3D
+@onready var audio : AudioStreamPlayer = $AudioStreamPlayer
+
+var coin_sfx : AudioStream = preload("res://Audio/coin.wav")
+var damage_sfx : AudioStream = preload("res://Audio/take_damage.wav")
 
 func _physics_process(delta: float) -> void:
 	#gravity
@@ -42,6 +46,7 @@ func take_damage(amount : int):
 	health -= amount
 	OnTakeDamage.emit(health)
 	
+	play_sound(damage_sfx)
 	
 	if health <= 0:
 		call_deferred("_game_over")
@@ -55,4 +60,8 @@ func _game_over():
 func increase_score(amount : int):
 	PlayerStats.score += amount
 	OnUpdateScore.emit(PlayerStats.score)
-	print(PlayerStats.score)
+	play_sound(coin_sfx)
+
+func play_sound(sound: AudioStream):
+	audio.stream = sound
+	audio.play()

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://be46srcrekq4f" path="res://scenes/enemy.tscn" id="3_knhd3"]
 [ext_resource type="PackedScene" uid="uid://br33gub360brt" path="res://scenes/finish_flag.tscn" id="3_wl4sj"]
 [ext_resource type="PackedScene" uid="uid://dcrwsg78v87de" path="res://scenes/coin.tscn" id="4_at62m"]
-[ext_resource type="PackedScene" uid="uid://c18lwib26bgu2" path="res://scenes/main.tscn" id="4_knhd3"]
+[ext_resource type="PackedScene" uid="uid://hs182wxv15mf" path="res://scenes/menu.tscn" id="4_knhd3"]
 [ext_resource type="PackedScene" uid="uid://drr6rh63u4ijq" path="res://scenes/player.tscn" id="5_0qfqs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
