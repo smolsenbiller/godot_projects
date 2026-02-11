@@ -25,3 +25,4 @@ func _on_body_entered(body: Node3D) -> void:
 		return
 	
 	print("damage")
+	body.take_damage(1)

@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@export var health : int = 3
+
 #This number is units per second eventually
 @export var move_speed : float = 3.0
 @export var jump_force : float = 8.0
@@ -23,10 +25,21 @@ func _physics_process(delta: float) -> void:
 	
 	#quick reset if fallen off platform
 	if position.y <= -2:
-		call_deferred("reload_scene")
+		take_damage(3)
 	
 	move_and_slide()
 
+func _process(delta: float) -> void:
+	#Falling off the edge definition
+	if position.y <= -2:
+		call_deferred("_game_over")
 
-func reload_scene():
+
+func take_damage(amount : int):
+	health -= amount
+	
+	if health <= 0:
+		call_deferred("_game_over")
+
+func _game_over():
 	get_tree().reload_current_scene()
