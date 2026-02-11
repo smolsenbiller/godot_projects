@@ -6,15 +6,21 @@ var hearts : Array = []
 @onready var score_text : Label = $ScoreText
 
 func _ready() -> void:
+	hearts = health_container.get_children()
+	
+	print(hearts)
+	
 	var player = get_parent()
 	
 	player.OnTakeDamage.connect(_update_hearts)
 	player.OnUpdateScore.connect(_update_score_text)
 	
+	_update_hearts(player.health)
 	_update_score_text(PlayerStats.score)
 
 func _update_hearts(health : int):
-	pass
+	for i in len(hearts):
+		hearts[i].visible = i < health
 	
 
 func _update_score_text(score: int):
