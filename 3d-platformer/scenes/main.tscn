@@ -3,6 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://nt526ew5itdb" path="res://Models/Platformer/block-grass-low-large.obj" id="1_o5qli"]
 [ext_resource type="ArrayMesh" uid="uid://cwhjysoc2pkg8" path="res://Models/Platformer/block-grass-low.obj" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://drr6rh63u4ijq" path="res://scenes/player.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://be46srcrekq4f" path="res://scenes/enemy.tscn" id="4_jyhfs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 
@@ -110,5 +111,14 @@ shape = SubResource("ConvexPolygonShape3D_jyhfs")
 [node name="MeshShape" type="MeshInstance3D" parent="Platforms/BlockGrassLow4" unique_id=7129608]
 mesh = ExtResource("2_0wfyh")
 
-[node name="Player" parent="." unique_id=25629282 instance=ExtResource("3_sugp2")]
+[node name="Player" parent="." unique_id=25629282 groups=["Player"] instance=ExtResource("3_sugp2")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5, 0)
+
+[node name="Enemy" parent="." unique_id=1314786225 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.756587, -1.6726142)
+
+[node name="Enemy2" parent="." unique_id=1268836649 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.756587, -3.9979105)
+
+[node name="Enemy3" parent="." unique_id=111857325 instance=ExtResource("4_jyhfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.756587, -6.449793)
