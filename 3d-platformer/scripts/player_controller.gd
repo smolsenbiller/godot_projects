@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+signal OnTakeDamage(hp : int)
+signal OnUpdateScore(score : int)
+
 @export var health : int = 3
 
 #This number is units per second eventually
@@ -37,9 +40,19 @@ func _process(delta: float) -> void:
 
 func take_damage(amount : int):
 	health -= amount
+	OnTakeDamage.emit(health)
+	
 	
 	if health <= 0:
 		call_deferred("_game_over")
 
+
 func _game_over():
+	PlayerStats.score = 0
 	get_tree().reload_current_scene()
+	
+
+func increase_score(amount : int):
+	PlayerStats.score += amount
+	OnUpdateScore.emit(PlayerStats.score)
+	print(PlayerStats.score)

@@ -3,10 +3,18 @@
 [ext_resource type="ArrayMesh" uid="uid://dstt6c0pctaaf" path="res://Models/Characters/character-male-b.obj" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://ny0su04pmf1s" path="res://scripts/player_controller.gd" id="1_g2els"]
 [ext_resource type="Script" uid="uid://bb04ryrust1bi" path="res://scripts/player_visual.gd" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://b4ejthuv2gg0" path="res://Sprites/hud_heartFull.png" id="4_dqkch"]
+[ext_resource type="Script" uid="uid://ctxlyadk1a6if" path="res://scripts/player_ui.gd" id="4_qlg0r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jyhfs"]
 radius = 0.1586914
 height = 0.6621094
+
+[sub_resource type="LabelSettings" id="LabelSettings_dqkch"]
+font_size = 53
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 0)
 
 [node name="Player" type="CharacterBody3D" unique_id=25629282]
 script = ExtResource("1_g2els")
@@ -21,3 +29,32 @@ shape = SubResource("CapsuleShape3D_jyhfs")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=262083896]
 transform = Transform3D(-1, 2.8750433e-08, -8.256e-08, 0, 0.94437635, 0.32886663, 8.742278e-08, 0.32886663, -0.94437635, 0, 1.0884585, -1.889719)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1305189637]
+script = ExtResource("4_qlg0r")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=176992420]
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 197.0
+offset_bottom = 83.0
+
+[node name="heart" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=2105019827]
+layout_mode = 2
+texture = ExtResource("4_dqkch")
+
+[node name="heart2" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=1446144636]
+layout_mode = 2
+texture = ExtResource("4_dqkch")
+
+[node name="heart3" type="TextureRect" parent="CanvasLayer/HBoxContainer" unique_id=1293513024]
+layout_mode = 2
+texture = ExtResource("4_dqkch")
+
+[node name="ScoreText" type="Label" parent="CanvasLayer" unique_id=44236556]
+offset_left = 35.0
+offset_top = 87.0
+offset_right = 235.0
+offset_bottom = 160.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_dqkch")

@@ -10,6 +10,7 @@ extends Area3D
 
 @onready var model : MeshInstance3D = $Model
 
+var score_amount : int = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -31,5 +32,5 @@ func _on_body_entered(body: Node3D) -> void:
 	if not body.is_in_group("Player"):
 		return
 	
-	print("Collected")
+	body.increase_score(score_amount)
 	queue_free()
