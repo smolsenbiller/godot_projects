@@ -3,7 +3,9 @@
 [ext_resource type="ArrayMesh" uid="uid://nt526ew5itdb" path="res://Models/Platformer/block-grass-low-large.obj" id="1_uih6o"]
 [ext_resource type="ArrayMesh" uid="uid://cwhjysoc2pkg8" path="res://Models/Platformer/block-grass-low.obj" id="2_wl4sj"]
 [ext_resource type="PackedScene" uid="uid://be46srcrekq4f" path="res://scenes/enemy.tscn" id="3_knhd3"]
+[ext_resource type="PackedScene" uid="uid://br33gub360brt" path="res://scenes/finish_flag.tscn" id="3_wl4sj"]
 [ext_resource type="PackedScene" uid="uid://dcrwsg78v87de" path="res://scenes/coin.tscn" id="4_at62m"]
+[ext_resource type="PackedScene" uid="uid://c18lwib26bgu2" path="res://scenes/main.tscn" id="4_knhd3"]
 [ext_resource type="PackedScene" uid="uid://drr6rh63u4ijq" path="res://scenes/player.tscn" id="5_0qfqs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
@@ -112,6 +114,10 @@ shape = SubResource("ConvexPolygonShape3D_jyhfs")
 [node name="MeshShape" type="MeshInstance3D" parent="Platforms/BlockGrassLow4" unique_id=7129608]
 mesh = ExtResource("2_wl4sj")
 
+[node name="FinishFlag" parent="Platforms" unique_id=1592716025 instance=ExtResource("3_wl4sj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.5111222, -8.112394)
+next_level = ExtResource("4_knhd3")
+
 [node name="Enemies" type="Node" parent="." unique_id=2007791693]
 
 [node name="Enemy" parent="Enemies" unique_id=1314786225 instance=ExtResource("3_knhd3")]
@@ -148,9 +154,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.799, 2.825, -8.009)
 
 [node name="coin5" parent="Coins" unique_id=351692618 instance=ExtResource("4_at62m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.267, 3.325, -8.009)
-
-[node name="coin6" parent="Coins" unique_id=143287469 instance=ExtResource("4_at62m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.933, 3.825, -8.141)
 
 [node name="Player" parent="." unique_id=25629282 groups=["Player"] instance=ExtResource("5_0qfqs")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5, 0)

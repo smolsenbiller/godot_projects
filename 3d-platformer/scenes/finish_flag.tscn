@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://br33gub360brt"]
+
+[ext_resource type="Script" uid="uid://ca4u0fir321t6" path="res://scripts/finish_flag.gd" id="1_6xep8"]
+[ext_resource type="ArrayMesh" uid="uid://76gjlm7g3f3a" path="res://Models/Platformer/flag.obj" id="1_7aggx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7aggx"]
+height = 0.8933716
+radius = 0.1484375
+
+[node name="FinishFlag" type="Area3D" unique_id=1592716025]
+script = ExtResource("1_6xep8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=481409315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13552809, 0, 0.13101387)
+mesh = ExtResource("1_7aggx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=431683357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12989374, 0.45266724, 0.1346822)
+shape = SubResource("CylinderShape3D_7aggx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

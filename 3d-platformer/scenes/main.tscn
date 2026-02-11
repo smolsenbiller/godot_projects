@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://drr6rh63u4ijq" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://be46srcrekq4f" path="res://scenes/enemy.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dcrwsg78v87de" path="res://scenes/coin.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://br33gub360brt" path="res://scenes/finish_flag.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://bvfeyp3jtokup" path="res://scenes/Level_2.tscn" id="7_o6xl0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
 
@@ -149,8 +151,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7994843, 0.82491136, -8.009
 [node name="coin5" parent="Coins" unique_id=351692618 instance=ExtResource("5_tbgi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2665706, 0.82491136, -8.009046)
 
-[node name="coin6" parent="Coins" unique_id=143287469 instance=ExtResource("5_tbgi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.933369, 0.82491136, -8.140898)
-
 [node name="Player" parent="." unique_id=25629282 groups=["Player"] instance=ExtResource("3_sugp2")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5, 0)
+
+[node name="Area3D" parent="." unique_id=1592716025 instance=ExtResource("6_tefeu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.03015, 0.49617958, -8.329783)
+next_level = ExtResource("7_o6xl0")
