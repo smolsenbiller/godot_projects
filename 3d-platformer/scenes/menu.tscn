@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://hs182wxv15mf"]
+
+[ext_resource type="Texture2D" uid="uid://dcg5iteof28rp" path="res://Sprites/menu_background.png" id="1_yqeox"]
+
+[node name="Menu" type="Control" unique_id=970743488]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=784959345]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_yqeox")
+
+[node name="Title" type="Label" parent="." unique_id=1320648771]
+layout_mode = 0
+offset_top = 68.0
+offset_right = 1152.0
+offset_bottom = 644.0
+text = "Game Name"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1821174753]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button2" type="Button" parent="." unique_id=1550471304]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
