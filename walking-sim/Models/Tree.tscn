@@ -26,7 +26,7 @@ radius = 0.16
 [node name="Tree" type="StaticBody3D" unique_id=635917152]
 
 [node name="TreeObj" type="MeshInstance3D" parent="." unique_id=1333964571]
-lod_bias = 128.0
+lod_bias = 100.0
 mesh = ExtResource("1_edyva")
 surface_material_override/0 = SubResource("StandardMaterial3D_chg71")
 surface_material_override/1 = SubResource("StandardMaterial3D_kkbq5")
