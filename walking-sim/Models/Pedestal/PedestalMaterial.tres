@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dibsygii5e2w5"]
+
+[ext_resource type="Texture2D" uid="uid://r60c0qrfd4u7" path="res://Models/Pedestal/Rock029_1K-JPG_Color.jpg" id="1_07o53"]
+
+[resource]
+albedo_texture = ExtResource("1_07o53")

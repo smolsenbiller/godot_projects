@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://qlkm7o5ja4ge"]
+
+[ext_resource type="ArrayMesh" uid="uid://cvjnawhp6xyqr" path="res://Models/Tree_0/tree_obj.obj" id="1_edyva"]
+[ext_resource type="Texture2D" uid="uid://co0vx4eo8s056" path="res://Models/Tree_0/bark01.jpg" id="2_jinuk"]
+[ext_resource type="Texture2D" uid="uid://dw0mjpp1myuxp" path="res://Models/Tree_0/leaf04.png" id="3_fno6u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chg71"]
+albedo_texture = ExtResource("2_jinuk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkbq5"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("3_fno6u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ytcy"]
+transparency = 2
+alpha_scissor_threshold = 0.558
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("3_fno6u")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fvj1o"]
+height = 5.7
+radius = 0.16
+
+[node name="Tree" type="StaticBody3D" unique_id=635917152]
+
+[node name="TreeObj" type="MeshInstance3D" parent="." unique_id=1333964571]
+lod_bias = 128.0
+mesh = ExtResource("1_edyva")
+surface_material_override/0 = SubResource("StandardMaterial3D_chg71")
+surface_material_override/1 = SubResource("StandardMaterial3D_kkbq5")
+surface_material_override/2 = SubResource("StandardMaterial3D_6ytcy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=608610738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.74, 0)
+shape = SubResource("CylinderShape3D_fvj1o")
