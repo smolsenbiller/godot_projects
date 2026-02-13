@@ -32,13 +32,26 @@ func _physics_process(delta: float) -> void:
 	#Movement
 	var move_input = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var move_dir = (transform.basis * Vector3(move_input.x, 0, move_input.y)).normalized()
+	is_running = Input.is_action_pressed("sprint")
+	var target_speed = max_speed
 	
-	if Input.is_action_pressed("sprint"):
-		velocity.x = move_dir.x * max_run_speed
-		velocity.z = move_dir.z * max_run_speed
-	else:
-		velocity.x = move_dir.x * max_speed
-		velocity.z = move_dir.z * max_speed
+	if is_running:
+		target_speed = max_run_speed
+		var run_dot = -move_dir.dot(transform.basis.z)
+		run_dot = clamp(run_dot, 0.0, 1.0)
+		move_dir *= run_dot
+	
+	var current_smoothing : float = acceleration
+	
+	if not is_on_floor():
+		current_smoothing = air_acceleration
+	elif not move_dir:
+		current_smoothing = braking
+	
+	var target_velocity = move_dir * target_speed
+	
+	velocity.x = lerp(velocity.x, target_velocity.x, current_smoothing * delta)
+	velocity.z = lerp(velocity.z, target_velocity.z, current_smoothing * delta)
 	
 	move_and_slide()
 	
@@ -48,6 +61,13 @@ func _physics_process(delta: float) -> void:
 	camera.rotate_x(-camera_look_input.y * look_sensitivity)
 	camera.rotation.x = clamp(camera.rotation.x, -1.5, 1.5)
 	camera_look_input = Vector2.ZERO
+	
+	#mouse
+	if Input.is_action_just_pressed("ui_cancel"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 func _unhandled_input(event: InputEvent) -> void:
