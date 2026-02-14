@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cj81ds2ycpa13"]
 
 [ext_resource type="Texture2D" uid="uid://4xcuhenidgxw" path="res://Sprites/Characters/tile_0084.png" id="1_gk1ts"]
+[ext_resource type="Script" uid="uid://cyt2kxyqv1ep" path="res://scripts/unit.gd" id="1_rwrny"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gk1ts"]
 size = Vector2(16, 16)
@@ -17,6 +18,7 @@ border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 
 [node name="Unit_Base" type="Area2D" unique_id=307062312]
+script = ExtResource("1_rwrny")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=512498341]
 texture = ExtResource("1_gk1ts")
