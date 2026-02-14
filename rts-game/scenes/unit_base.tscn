@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cj81ds2ycpa13"]
+
+[ext_resource type="Texture2D" uid="uid://4xcuhenidgxw" path="res://Sprites/Characters/tile_0084.png" id="1_gk1ts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gk1ts"]
+size = Vector2(16, 16)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gk1ts"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwrny"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[node name="Unit_Base" type="Area2D" unique_id=307062312]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=512498341]
+texture = ExtResource("1_gk1ts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1986121501]
+shape = SubResource("RectangleShape2D_gk1ts")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1288641555]
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=608798076]
+offset_left = -8.0
+offset_top = -12.999999
+offset_right = 151.99998
+offset_bottom = 26.999989
+scale = Vector2(0.1, 0.1)
+theme_override_styles/background = SubResource("StyleBoxFlat_gk1ts")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rwrny")
+value = 63.0
+show_percentage = false
