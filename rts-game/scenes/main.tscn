@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bjvsn4amg5y3f"]
 
 [ext_resource type="TileSet" uid="uid://bomhkjnepth8w" path="res://Sprites/Tiles/tile_set.tres" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://cj81ds2ycpa13" path="res://scenes/unit_base.tscn" id="2_0wfyh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_o5qli"]
 vertices = PackedVector2Array(232, -24, 232, 72, 184, 72, 120, 40, 120, -8, 184, -24, 232, 120, 262, 134, -262, 134, 184, 120, -184, 120, -232, 120, 232, -72, 262, -86, -262, -86, 184, -72, -232, 72, -72, 40, 72, -8, 72, 40, -72, -8, -120, 40, -184, 72, -184, -24, -184, -72, -232, -72, -120, -8, -232, -24)
@@ -17,6 +18,7 @@ tile_set = ExtResource("1_o5qli")
 zoom = Vector2(3.2, 3.2)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1875283304]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_o5qli")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D" unique_id=1765200548]
@@ -53,3 +55,5 @@ position = Vector2(416, 144)
 vertices = PackedVector2Array(-232, -72, -184, -72, -184, -24, -232, -24)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
+
+[node name="Unit_Base" parent="." unique_id=307062312 instance=ExtResource("2_0wfyh")]
