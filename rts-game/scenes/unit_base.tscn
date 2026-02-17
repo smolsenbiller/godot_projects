@@ -27,6 +27,8 @@ texture = ExtResource("1_gk1ts")
 shape = SubResource("RectangleShape2D_gk1ts")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1288641555]
+path_desired_distance = 5.0
+target_desired_distance = 5.0
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=608798076]
 offset_left = -8.0
