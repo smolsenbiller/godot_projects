@@ -30,7 +30,16 @@ func _unselect_unit():
 	
 
 func _try_command_unit():
-	pass
+	if selected_unit == null:
+		return
+	
+	var target = _get_selected_unit()
+	
+	if target != null:
+		if target.team != Unit.Team.PLAYER:
+			selected_unit.set_attack_target(target)
+	else:
+		selected_unit.set_move_to_target(get_global_mouse_position())
 
 func _get_selected_unit() -> Unit:
 	var space = get_world_2d().direct_space_state

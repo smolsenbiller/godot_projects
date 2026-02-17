@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://4xcuhenidgxw" path="res://Sprites/Characters/tile_0084.png" id="1_gk1ts"]
 [ext_resource type="Script" uid="uid://cyt2kxyqv1ep" path="res://scripts/unit.gd" id="1_rwrny"]
+[ext_resource type="Script" uid="uid://btgfw2l5d7qeo" path="res://scripts/unit_health_bar.gd" id="3_2k7yo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gk1ts"]
 size = Vector2(16, 16)
@@ -40,3 +41,4 @@ theme_override_styles/background = SubResource("StyleBoxFlat_gk1ts")
 theme_override_styles/fill = SubResource("StyleBoxFlat_rwrny")
 value = 63.0
 show_percentage = false
+script = ExtResource("3_2k7yo")

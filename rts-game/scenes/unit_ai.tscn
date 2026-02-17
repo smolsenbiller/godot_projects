@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://3gvp60jmu1r1"]
+
+[ext_resource type="PackedScene" uid="uid://cj81ds2ycpa13" path="res://scenes/unit_base.tscn" id="1_wu4mk"]
+[ext_resource type="Texture2D" uid="uid://d1e2hwfuyqejh" path="res://Sprites/Characters/tile_0109.png" id="2_2x2we"]
+
+[node name="Unit_AI" unique_id=307062312 instance=ExtResource("1_wu4mk")]
+move_speed = 30.0
+attack_range = 30.0
+attack_rate = 1.0
+team = 1
+
+[node name="Sprite2D" parent="." index="0" unique_id=512498341]
+texture = ExtResource("2_2x2we")
