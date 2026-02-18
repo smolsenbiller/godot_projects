@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://bomhkjnepth8w" path="res://Sprites/Tiles/tile_set.tres" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bow8h7evja1l2" path="res://scripts/unit_controller.gd" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://qwqygceg1y4d" path="res://scenes/unit_player.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://3gvp60jmu1r1" path="res://scenes/unit_ai.tscn" id="4_jyhfs"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_o5qli"]
 vertices = PackedVector2Array(232, -24, 232, 72, 184, 72, 120, 40, 120, -8, 184, -24, 232, 120, 262, 134, -262, 134, 184, 120, -184, 120, -232, 120, 232, -72, 262, -86, -262, -86, 184, -72, -232, 72, -72, 40, 72, -8, 72, 40, -72, -8, -120, 40, -184, 72, -184, -24, -184, -72, -232, -72, -120, -8, -232, -24)
@@ -68,3 +69,12 @@ position = Vector2(-160, -8)
 
 [node name="Unit_Player3" parent="." unique_id=627939563 instance=ExtResource("3_sugp2")]
 position = Vector2(-160, 56)
+
+[node name="Unit_AI" parent="." unique_id=1762835736 instance=ExtResource("4_jyhfs")]
+position = Vector2(166, 27)
+
+[node name="Unit_AI2" parent="." unique_id=976507831 instance=ExtResource("4_jyhfs")]
+position = Vector2(134, -7)
+
+[node name="Unit_AI3" parent="." unique_id=708751143 instance=ExtResource("4_jyhfs")]
+position = Vector2(-95, 83)

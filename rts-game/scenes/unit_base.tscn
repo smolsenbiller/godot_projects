@@ -18,7 +18,7 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 
-[node name="Unit_Base" type="Area2D" unique_id=307062312]
+[node name="Unit_Base" type="Area2D" unique_id=307062312 groups=["Unit"]]
 script = ExtResource("1_rwrny")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=512498341]

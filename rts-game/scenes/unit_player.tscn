@@ -10,7 +10,8 @@ colors = PackedColorArray(2.5629624e-06, 0.47648412, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_6si66"]
 gradient = SubResource("Gradient_0hfw4")
 
-[node name="Unit_Player" unique_id=307062312 instance=ExtResource("1_5md6y")]
+[node name="Unit_Player" unique_id=307062312 groups=["UnitPlayer"] instance=ExtResource("1_5md6y")]
+current_hp = 40
 
 [node name="PlayerUnit" type="Node" parent="." index="0" unique_id=1420913843]
 script = ExtResource("2_07vio")
