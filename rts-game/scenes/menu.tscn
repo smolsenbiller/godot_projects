@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cdfjfl05nn4pr"]
+
+[ext_resource type="Script" uid="uid://b7bcyl5wvg376" path="res://scripts/menu.gd" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://e33ukyq7vfg4" path="res://Sprites/Backgrounds/menu_background.png" id="1_yqeox"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vjb58"]
+font_size = 64
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0, 0)
+
+[node name="Menu" type="Control" unique_id=546956746]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vjb58")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1597947994]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yqeox")
+
+[node name="Title" type="Label" parent="." unique_id=1390808959]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -387.0
+offset_top = 176.0
+offset_right = 387.0
+offset_bottom = 264.0
+grow_horizontal = 2
+text = "Real Time Strategy Game"
+label_settings = SubResource("LabelSettings_vjb58")
+
+[node name="PlayButton" type="Button" parent="." unique_id=1300711103]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -198.0
+offset_right = 225.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="." unique_id=1249525652]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = 17.0
+offset_right = 225.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Quit"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

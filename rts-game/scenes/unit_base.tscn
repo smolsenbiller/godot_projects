@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://cyt2kxyqv1ep" path="res://scripts/unit.gd" id="1_rwrny"]
 [ext_resource type="Script" uid="uid://btgfw2l5d7qeo" path="res://scripts/unit_health_bar.gd" id="3_2k7yo"]
 [ext_resource type="Script" uid="uid://c7iutknj43x1w" path="res://scripts/unit_visiual.gd" id="3_3igep"]
+[ext_resource type="Script" uid="uid://0d8gi8m4oanl" path="res://scripts/unit_audio.gd" id="5_vam1i"]
+[ext_resource type="AudioStream" uid="uid://c332x6gt7jykx" path="res://Audio/take_damage.wav" id="6_i4fi6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gk1ts"]
 size = Vector2(16, 16)
@@ -46,3 +48,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_rwrny")
 value = 63.0
 show_percentage = false
 script = ExtResource("3_2k7yo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1474192259]
+script = ExtResource("5_vam1i")
+take_damage_sfx = ExtResource("6_i4fi6")
